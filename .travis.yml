@@ -1,4 +1,4 @@
-dist: bionic
+dist: focal
 language: generic
 
 before_install:
