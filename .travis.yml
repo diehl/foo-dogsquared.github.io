@@ -1,11 +1,12 @@
-dist: focal
 language: nix
 
 before_script:
   - sudo mkdir -p /etc/nix && echo 'sandbox = true' | sudo tee /etc/nix/nix.conf
 
 script:
-  - nix-shell shell.nix --pure --run "./bin/openring-create && hugo"
+  - nix-shell --pure ./shell.nix --run "./bin/openring-create"
+  - nix-env -i hugo go asciidoctor
+  - hugo
 
 env:
   global:
@@ -18,5 +19,7 @@ deploy:
   github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   target_branch: gh-pages
   on:
-    branch: master
+    branch:
+        - master
+        - develop
 

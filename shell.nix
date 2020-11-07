@@ -1,5 +1,4 @@
 let
-
   # See https://nixos.wiki/wiki/FAQ/Pinning_Nixpkgs for more information on pinning
   nixpkgs = builtins.fetchTarball {
     # Descriptive name to make the store path easier to identify
@@ -9,9 +8,7 @@ let
     # Hash obtained using `nix-prefetch-url --unpack <url>`
     sha256 = "19xmsj1dhq25arhsfx0sl3r1y0zgpzfwhybc5dsxr1szh71wz3xs";
   };
-
 in
-
 { pkgs ? import <nixpkgs> {} }:
 
 with pkgs;
@@ -35,15 +32,14 @@ let
       description = "Tool for generating a webring from a list of RSS feeds.";
       homepage = "https://git.sr.ht/~sircmpwn/openring";
       license = licenses.gpl3;
-      maintainers = with maintainers; [ foo-dogsquared ];
     };
   };
 in
 mkShell {
   buildInputs = [
     asciidoctor
-    go
     git
+    go
     hugo
     jq
     openring
@@ -51,5 +47,7 @@ mkShell {
 
   shellHook = ''
     chmod +x ./bin/openring-create
+    go version
+    hugo version
   '';
 }
