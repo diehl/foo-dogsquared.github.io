@@ -1,5 +1,5 @@
 dist: focal
-language: go
+language: generic
 
 before_install:
   - sudo apt-get update
