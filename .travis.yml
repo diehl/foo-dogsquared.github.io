@@ -1,9 +1,8 @@
 dist: focal
-language: generic
+language: go
 
 before_install:
   - sudo apt-get update
-  - sudo apt-get install golang-go python3 ruby
   - sudo apt-get install git jq wget graphviz
   - wget "https://github.com/gohugoio/hugo/releases/download/v${HUGO_RELEASE}/hugo_extended_${HUGO_RELEASE}_Linux-64bit.deb"
   - sudo dpkg -i *.deb
