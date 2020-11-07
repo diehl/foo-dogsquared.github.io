@@ -3,13 +3,15 @@ language: generic
 
 before_install:
   - sudo apt-get update
+  - sudo apt-get install golang-go ruby
   - sudo apt-get install git jq wget graphviz
   - wget "https://github.com/gohugoio/hugo/releases/download/v${HUGO_RELEASE}/hugo_extended_${HUGO_RELEASE}_Linux-64bit.deb"
   - sudo dpkg -i *.deb
   - sudo gem install asciidoctor asciidoctor-diagram
-  - git clone https://git.sr.ht/~sircmpwn/openring && cd openring && go build
+  - go version
 
 script:
+  - git clone https://git.sr.ht/~sircmpwn/openring && cd openring && go build
   - make build
 
 env:
