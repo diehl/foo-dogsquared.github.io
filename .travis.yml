@@ -13,7 +13,8 @@ before_install:
 
 script:
   - git clone https://git.sr.ht/~sircmpwn/openring && cd openring && go build
-  - make build
+  - ./bin/openring-create
+  - hugo
 
 env:
   global:
