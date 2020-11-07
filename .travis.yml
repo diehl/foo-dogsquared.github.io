@@ -1,16 +1,15 @@
 dist: focal
 language: nix
 
+before_script:
+  - sudo mkdir -p /etc/nix && echo 'sandbox = true' | sudo tee /etc/nix/nix.conf
+
 script:
-  - nix-shell shell.nix
-  - git clone https://git.sr.ht/~sircmpwn/openring && cd openring && go build && cd ../
-  - chmod +x ./bin/openring-create && ./bin/openring-create
-  - hugo
+  - nix-shell shell.nix --pure --run "./bin/openring-create && hugo"
 
 env:
   global:
     - PRODUCTION=true
-    - HUGO_RELEASE=0.76.0
 
 deploy:
   local_dir: "./public/"
