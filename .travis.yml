@@ -12,7 +12,7 @@ before_install:
   - go version
 
 script:
-  - git clone https://git.sr.ht/~sircmpwn/openring && cd openring && go build
+  - git clone https://git.sr.ht/~sircmpwn/openring && cd openring && go build && cd ../
   - ./bin/openring-create
   - hugo
 
