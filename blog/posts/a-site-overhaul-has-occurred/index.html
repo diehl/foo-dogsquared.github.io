@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en-us"><title>A site overhaul has occurred | Gabriel Arazas</title>
+
+
+
+
+<link rel="stylesheet" href="https://foo-dogsquared.github.io/css/main.min.6a4c8f4d8980f851a02a79bcc9df947eced01d5013b253ef5e3ffaa89fc98127.css" /><meta name="generator" content="Hugo 0.78.0" />
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="no-referrer" />
+<meta name="description" content="ANNOUNCEMENT: A site overhaul has occurred." /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A site overhaul has occurred"/>
+<meta name="twitter:description" content="ANNOUNCEMENT: A site overhaul has occurred."/>
+<meta property="og:title" content="A site overhaul has occurred" />
+<meta property="og:description" content="ANNOUNCEMENT: A site overhaul has occurred." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://foo-dogsquared.github.io/blog/posts/a-site-overhaul-has-occurred/" />
+<meta property="article:published_time" content="2019-08-15T18:10:07+08:00" />
+<meta property="article:modified_time" content="2020-11-05T12:37:04+08:00" />
+<link rel="canonical" type="text/html" href="https://foo-dogsquared.github.io/blog/posts/a-site-overhaul-has-occurred/" />
+    
+    <script>
+    let theme = window.localStorage.getItem('theme'); 
+    if (theme) {
+        document.documentElement.dataset.theme = theme;
+    }
+</script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/keep-markup/prism-keep-markup.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.5/dist/medium-zoom.min.js"></script>
+<script>window.addEventListener('load', () => mediumZoom('article img', { 'background': 'rgba(0, 0, 0, 0.75)' }))</script>
+
+<body><nav aria-label="Primary navigation">
+  <a class="site__title" href="https://foo-dogsquared.github.io/">Gabriel Arazas</a>
+  <div class="list site__links">
+    
+      <a href="https://foo-dogsquared.github.io/about/">About me</a>
+      <a href="https://foo-dogsquared.github.io/archives/">Archives</a>
+      <a href="https://foo-dogsquared.github.io/blog/">Blog</a>
+      
+    
+  </div>
+</nav>
+
+
+<article class="post--single">
+    <header>
+        <h1>A site overhaul has occurred</h1>
+    </header>
+<div class="list post__meta"><time datetime="2019-08-15 18:10:07 &#43;0800 &#43;0800">
+    
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/generic/calendar.svg#calendar"></use>
+  </svg>
+
+    <span style="margin-left: 0.5em;">2019-08-15</span>
+  </time>
+  <time datetime="2020-11-05 12:37:04 &#43;0800 &#43;0800">
+    
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/generic/refresh.svg#refresh"></use>
+  </svg>
+
+    <span style="margin-left: 0.5em;">2020-11-05</span>
+  </time>
+</div>
+    <style>
+    #TableOfContents:not(:empty)::before {
+      content: "Table of contents";
+      font-weight: bold;
+    }
+    </style>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#_from_jekyll_to_hugo">From Jekyll to Hugo</a></li>
+    <li><a href="#_change_of_purpose">Change of purpose</a></li>
+    <li><a href="#_blog_clean_up_and_revision">Blog clean-up and revision</a></li>
+    <li><a href="#_conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+
+
+    <main>
+    
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>ANNOUNCEMENT: A site overhaul has occurred. Please
+see the changelog. A site overhaul has occurred.
+Please see the changelog.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_from_jekyll_to_hugo"><a class="anchor" href="#_from_jekyll_to_hugo"></a>From Jekyll to Hugo</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>First and foremost, the blog has moved from
+<a href="https://jekyllrb.com">Jekyll</a> to <a href="https://gohugo.io/">Hugo</a>.
+I could create a theme but it would take me way longer
+than should just to migrate the blog so for now I settled
+with the <a href="https://themes.gohugo.io/hugo-theme-terminal/">Terminal</a>
+since I’m starting to appreciate terminal-themed websites
+(also, I think it’s easier for me to design a terminal-themed website
+if I have to create one).</p>
+</div>
+<div class="paragraph">
+<p>I’ve ported the blog to Hugo for multitude of reasons:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Speed</p>
+</li>
+<li>
+<p>Ease of content management</p>
+</li>
+<li>
+<p>More organized approach for my content</p>
+</li>
+<li>
+<p>Built-in support for blogging with <a href="https://asciidoctor.org/">Asciidoctor</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Built-in support for <a href="https://asciidoctor.org/">Asciidoctor</a> although
+it’s mostly done through calling external programs.</p>
+</div>
+<div class="paragraph">
+<p>Though Jekyll <a href="https://asciidoctor.org/">does have a plug-in for blogging with Asciidoctor</a>,
+I don’t really want another plug-in for that. I just want a
+static site generator with built-in support for blogging with Asciidoctor and
+Hugo just provides that. The speed and ease of configuration is
+also a really large bonus.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_change_of_purpose"><a class="anchor" href="#_change_of_purpose"></a>Change of purpose</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The blog is in hiatus due to me taking notes in
+<a href="https://www.latex-project.org/">LaTeX</a> now and a change of
+purpose for my blog. I already have a
+<a href="https://github.com/foo-dogsquared/personal-notes/">a storage for my notes</a>
+and
+<a href="https://github.com/foo-dogsquared/a-remote-repo-full-of-notes-of-things-i-do-not-know-about/">another for my lecture/detailed notes</a>
+so I don’t see any point to make this as an all-around notes notebook.
+It’s too repetitive to have it around so the vision for my blog
+has changed.</p>
+</div>
+<div class="paragraph">
+<p>Here’s what I think my online notes should be divided with these three
+outlets:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>My notes storage would be short/slightly detailed notes on random things.
+This is basically where my <em>Simplified!</em>-type of notes should get in.</p>
+</li>
+<li>
+<p>My lecture notes are where detailed studies of subjects or concepts
+should go.</p>
+</li>
+<li>
+<p>My blog will be about…​ I don’t know, really. I do have a set of ideas that I
+think it’s suitable for blogging about it so let’s just find out along the
+way.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_blog_clean_up_and_revision"><a class="anchor" href="#_blog_clean_up_and_revision"></a>Blog clean-up and revision</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Since the overall purpose of the blog has been changed, so does the little
+details that make up the blog.</p>
+</div>
+<div class="paragraph">
+<p>I’ve cleaned up my blog by removing most of the posts that I think it’s not
+suitable for the blog anymore. The <em>Learnings and Resources</em> series will be reset
+(starting this month) with a couple of revisions and improvement for the reading experience.</p>
+</div>
+<div class="paragraph">
+<p>The <em>Simplified!</em> series is still going to be up and coming with revisions and a new
+style of technical writing. My <a href="https://github.com/foo-dogsquared/personal-notes/">personal notes</a>
+is still going to have the style of <em>Simplified!</em> series I was originally going for.</p>
+</div>
+<div class="paragraph">
+<p>I’ve been thinking about revising my writing style as well. I mostly view my
+current style as too verbose. I’ve learned that it’s became a
+pain to read for my future self if I were to revisit a concept/study again.</p>
+</div>
+<div class="paragraph">
+<p>With the revised writing style, I also want to improve my writing by adopting a new
+writing workflow. This is basically the stuff you would encounter in a high school
+writing class but I’ve been less compliant with it over the last few posts (before the
+change).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion"><a class="anchor" href="#_conclusion"></a>Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The blog is under change and it’s not suitable to be a student’s notebook anymore and
+it goes on to my <a href="https://github.com/foo-dogsquared/personal-notes/">online</a>
+<a href="https://github.com/foo-dogsquared/a-remote-repo-full-of-notes-of-things-i-do-not-know-about/">notes</a>.</p>
+</div>
+<div class="paragraph">
+<p>Along with the change of purpose is a change of style and presentation for my
+studies. Starting with the last quarter of the year is taking the more challenging route
+for improvement and hopefully this change reflect that as well.</p>
+</div>
+<div class="paragraph">
+<p>Well, I still don’t know how to end this post so have a nice day! :)</p>
+</div>
+</div>
+</div>
+
+    </main>
+
+    <hr>
+    
+    <div class="post__meta--single"><p data-content-publication-date="2019-08-15 18:10:07 &#43;0800 &#43;0800">
+          <span>Published:</span>
+          <span><time datetime="2019-08-15 18:10:07 &#43;0800">2019-08-15 18:10:07 &#43;0800</time></span>
+        </p>
+        <p data-content-modification-date="2020-11-05 12:37:04 &#43;0800 &#43;0800">
+            <span>Updated:</span>
+            <span><time datetime="2020-11-05 12:37:04 &#43;0800">2020-11-05 12:37:04 &#43;0800</time></span>
+        </p>
+          <p data-content-tags="[&#34;\u003ca href=\&#34;/tags#self\&#34;\u003eself\u003c/a\u003e&#34;,&#34;\u003ca href=\&#34;/tags#meta\&#34;\u003emeta\u003c/a\u003e&#34;]">
+            <span>Topic:</span>
+            <span><a href="https://foo-dogsquared.github.io/tags#self">self</a>.<a href="https://foo-dogsquared.github.io/tags#meta">meta</a></span>
+          </p>
+          <p data-content-hash="50d21de18d08132f15667a2858d525b381f61239">
+            <span>Hash:</span>
+            <span>50d21de18d08132f15667a2858d525b381f61239</span>
+          </p></div>
+</article>
+
+<hr>
+<footer>
+
+<p><a href="#top">Back to top</a></p>
+
+
+
+
+
+
+
+<ul class="list site__socials">
+  
+
+  
+  <li>
+    <a class="site__social-icon" rel="me" href="https://foo-dogsquared.github.io/index.atom" aria-label="RSS">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/rss.svg#rss"></use>
+  </svg>
+    </a>
+  </li><li>
+    <a class="site__social-icon" rel="me" href="https://github.com/foo-dogsquared/" aria-label="GitHub">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/github.svg#github"></use>
+  </svg>
+    </a>
+  </li><li>
+    <a class="site__social-icon" rel="me" href="https://gitlab.com/foo-dogsquared/" aria-label="GitLab">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/gitlab.svg#gitlab"></use>
+  </svg>
+    </a>
+  </li><li>
+    <a class="site__social-icon" rel="me" href="https://mastodon.online/@foodogsquared" aria-label="Mastodon">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/mastodon.svg#mastodon"></use>
+  </svg>
+    </a>
+  </li><li>
+    <a class="site__social-icon" rel="me" href="https://twitter.com/foo_dogsquared" aria-label="Twitter">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/twitter.svg#twitter"></use>
+  </svg>
+    </a>
+  </li></ul>
+
+
+
+
+<p>Unless explicitly stated, all content released here are licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+<p>This site uses <a href="https://prismjs.com/">Prism</a>, <a href="https://www.mathjax.org/">MathJax</a>, and <a href="https://github.com/francoischalifour/medium-zoom">medium-zoom</a>.
+For analytics, it uses <a href="https://goatcounter.com/">GoatCounter</a>.</p>
+
+<small>Generated on 2020-11-12 04:45:12 &#43;0000</small>
+</footer>
+
+<script data-goatcounter="https://foo-dogsquared.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>development on Gabriel Arazas</title>
+    <link>https://foo-dogsquared.github.io/tags/development/</link>
+    <description>Recent content in development on Gabriel Arazas</description>
+    <generator>Hugo v0.78.0 -- gohugo.io</generator><language>en-us</language><copyright>Unless explicitly stated, all content released here are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+</copyright>
+        <lastBuildDate>Tue, 30 Apr 2019 12:32:40 +0800</lastBuildDate>
+    <docs>https://www.rssboard.org/rss-2-0-1</docs>
+        <atom:link href="https://foo-dogsquared.github.io/tags/development/index.rss" rel="self" type="application/rss+xml" />
+        <atom:link href="https://foo-dogsquared.github.io/tags/development/" rel="canonical" type="text/html" />
+    <item>
+      <title>Developing projects with free resources</title>
+      <link>https://foo-dogsquared.github.io/blog/posts/developing-projects-with-free-resources/</link>
+      <category>projects</category>
+      <category>development</category>
+
+      <pubDate>Tue, 30 Apr 2019 12:32:40 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/blog/posts/developing-projects-with-free-resources/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>freebies on Gabriel Arazas</title>
+    <link>https://foo-dogsquared.github.io/tags/freebies/</link>
+    <description>Recent content in freebies on Gabriel Arazas</description>
+    <generator>Hugo v0.78.0 -- gohugo.io</generator><language>en-us</language><copyright>Unless explicitly stated, all content released here are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+</copyright>
+        <lastBuildDate>Tue, 01 May 2018 09:25:57 +0800</lastBuildDate>
+    <docs>https://www.rssboard.org/rss-2-0-1</docs>
+        <atom:link href="https://foo-dogsquared.github.io/tags/freebies/index.rss" rel="self" type="application/rss+xml" />
+        <atom:link href="https://foo-dogsquared.github.io/tags/freebies/" rel="canonical" type="text/html" />
+    <item>
+      <title>A freebie&#39;s resource list (mostly related to programming)</title>
+      <link>https://foo-dogsquared.github.io/blog/posts/a-freebies-resource-list-mostly-related-to-programming/</link>
+      <category>bookmarks</category>
+      <category>freebies</category>
+
+      <pubDate>Tue, 01 May 2018 09:25:57 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/blog/posts/a-freebies-resource-list-mostly-related-to-programming/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

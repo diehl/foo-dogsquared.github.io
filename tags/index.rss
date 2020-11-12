@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Gabriel Arazas</title>
+    <link>https://foo-dogsquared.github.io/tags/</link>
+    <description>Recent content in Tags on Gabriel Arazas</description>
+    <generator>Hugo v0.78.0 -- gohugo.io</generator><language>en-us</language><copyright>Unless explicitly stated, all content released here are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+</copyright>
+        <lastBuildDate>Sun, 11 Oct 2020 12:47:58 +0800</lastBuildDate>
+    <docs>https://www.rssboard.org/rss-2-0-1</docs>
+        <atom:link href="https://foo-dogsquared.github.io/tags/index.rss" rel="self" type="application/rss+xml" />
+        <atom:link href="https://foo-dogsquared.github.io/tags/" rel="canonical" type="text/html" />
+    <item>
+      <title>linux</title>
+      <link>https://foo-dogsquared.github.io/tags/linux/</link>
+
+      <pubDate>Sun, 11 Oct 2020 12:47:58 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>nix</title>
+      <link>https://foo-dogsquared.github.io/tags/nix/</link>
+
+      <pubDate>Sun, 11 Oct 2020 12:47:58 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/tags/nix/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>documentation</title>
+      <link>https://foo-dogsquared.github.io/tags/documentation/</link>
+
+      <pubDate>Sat, 28 Sep 2019 20:29:58 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/tags/documentation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>writing</title>
+      <link>https://foo-dogsquared.github.io/tags/writing/</link>
+
+      <pubDate>Sat, 28 Sep 2019 20:29:58 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/tags/writing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>hugo</title>
+      <link>https://foo-dogsquared.github.io/tags/hugo/</link>
+
+      <pubDate>Tue, 03 Sep 2019 13:07:43 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ssg</title>
+      <link>https://foo-dogsquared.github.io/tags/ssg/</link>
+
+      <pubDate>Tue, 03 Sep 2019 13:07:43 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/tags/ssg/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>desktop</title>
+      <link>https://foo-dogsquared.github.io/tags/desktop/</link>
+
+      <pubDate>Sun, 25 Aug 2019 18:03:43 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/tags/desktop/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ricing</title>
+      <link>https://foo-dogsquared.github.io/tags/ricing/</link>
+
+      <pubDate>Sun, 25 Aug 2019 18:03:43 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/tags/ricing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>meta</title>
+      <link>https://foo-dogsquared.github.io/tags/meta/</link>
+
+      <pubDate>Thu, 15 Aug 2019 18:10:07 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/tags/meta/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>self</title>
+      <link>https://foo-dogsquared.github.io/tags/self/</link>
+
+      <pubDate>Thu, 15 Aug 2019 18:10:07 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/tags/self/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

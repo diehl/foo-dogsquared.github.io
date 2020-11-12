@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/blog/posts/implementing-configurable-base16-schemes-in-hugo-themes/</loc>
+    <lastmod>2020-11-12T11:53:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/categories/</loc>
+    <lastmod>2020-11-10T01:49:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/categories/how-to-linux/</loc>
+    <lastmod>2020-11-10T01:49:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/categories/how-to-nixos/</loc>
+    <lastmod>2020-11-10T01:49:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/tags/linux/</loc>
+    <lastmod>2020-11-10T01:49:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/blog/posts/moving-into-nixos/</loc>
+    <lastmod>2020-11-10T01:49:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/tags/nix/</loc>
+    <lastmod>2020-11-10T01:49:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/tags/</loc>
+    <lastmod>2020-11-10T01:49:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/categories/documentation/</loc>
+    <lastmod>2020-11-10T01:49:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/tags/documentation/</loc>
+    <lastmod>2020-11-10T01:49:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/blog/posts/what-is-effective-documentation/</loc>
+    <lastmod>2020-11-10T01:49:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/tags/writing/</loc>
+    <lastmod>2020-11-10T01:49:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/blog/posts/blogging-with-asciidoctor-and-hugo/</loc>
+    <lastmod>2020-11-10T01:49:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/categories/hugo/</loc>
+    <lastmod>2020-11-10T01:49:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/tags/hugo/</loc>
+    <lastmod>2020-11-10T01:49:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/tags/ssg/</loc>
+    <lastmod>2020-11-10T01:49:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/blog/posts/a-ricing-starting-checklist/</loc>
+    <lastmod>2020-11-10T01:49:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/tags/desktop/</loc>
+    <lastmod>2020-11-10T01:49:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/tags/ricing/</loc>
+    <lastmod>2020-11-10T01:49:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/blog/posts/the-complete-linux-turnabout/</loc>
+    <lastmod>2020-11-10T01:49:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/blog/posts/a-site-overhaul-has-occurred/</loc>
+    <lastmod>2020-11-05T12:37:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/tags/meta/</loc>
+    <lastmod>2020-11-05T12:37:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/tags/self/</loc>
+    <lastmod>2020-11-05T12:37:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/blog/posts/developing-projects-with-free-resources/</loc>
+    <lastmod>2020-11-05T12:37:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/tags/development/</loc>
+    <lastmod>2020-11-05T12:37:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/categories/how-not-to-procastinate/</loc>
+    <lastmod>2020-11-05T12:37:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/tags/projects/</loc>
+    <lastmod>2020-11-05T12:37:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/blog/posts/a-freebies-resource-list-mostly-related-to-programming/</loc>
+    <lastmod>2020-11-05T12:37:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/tags/bookmarks/</loc>
+    <lastmod>2020-11-05T12:37:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/categories/freebies/</loc>
+    <lastmod>2020-11-05T12:37:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/tags/freebies/</loc>
+    <lastmod>2020-11-05T12:37:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/about/</loc>
+    <lastmod>2020-11-10T01:49:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/archives/</loc>
+    <lastmod>2020-11-05T12:37:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/blog/</loc>
+    <lastmod>2020-11-07T00:16:16+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/</loc>
+    <lastmod>2020-11-07T06:16:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://foo-dogsquared.github.io/posts/</loc>
+    <lastmod>2019-08-21T13:42:47+08:00</lastmod>
+  </url>
+  
+</urlset>

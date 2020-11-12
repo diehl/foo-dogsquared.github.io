@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Gabriel Arazas</title>
+    <link>https://foo-dogsquared.github.io/posts/</link>
+    <description>Recent content in Posts on Gabriel Arazas</description>
+    <generator>Hugo v0.78.0 -- gohugo.io</generator><language>en-us</language><copyright>Unless explicitly stated, all content released here are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+</copyright>
+    <docs>https://www.rssboard.org/rss-2-0-1</docs>
+        <atom:link href="https://foo-dogsquared.github.io/posts/index.rss" rel="self" type="application/rss+xml" />
+        <atom:link href="https://foo-dogsquared.github.io/posts/" rel="canonical" type="text/html" />
+        <atom:link href="https://foo-dogsquared.github.io/posts/index.atom" rel="alternate" type="application/atom+xml" />
+        <atom:link href="https://foo-dogsquared.github.io/posts/index.json" rel="alternate" type="application/feed+json" />
+    <item>
+      <title>Implementing configurable Base16 schemes in Hugo themes</title>
+      <link>https://foo-dogsquared.github.io/blog/posts/implementing-configurable-base16-schemes-in-hugo-themes/</link>
+
+      <pubDate>Sun, 08 Nov 2020 12:30:27 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/blog/posts/implementing-configurable-base16-schemes-in-hugo-themes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Moving into NixOS</title>
+      <link>https://foo-dogsquared.github.io/blog/posts/moving-into-nixos/</link>
+      <category>linux</category>
+      <category>nix</category>
+
+      <pubDate>Sun, 11 Oct 2020 12:47:58 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/blog/posts/moving-into-nixos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>What is effective documentation</title>
+      <link>https://foo-dogsquared.github.io/blog/posts/what-is-effective-documentation/</link>
+      <category>writing</category>
+      <category>documentation</category>
+
+      <pubDate>Sat, 28 Sep 2019 20:29:58 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/blog/posts/what-is-effective-documentation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Blogging with Asciidoctor and Hugo</title>
+      <link>https://foo-dogsquared.github.io/blog/posts/blogging-with-asciidoctor-and-hugo/</link>
+      <category>writing</category>
+      <category>ssg</category>
+      <category>hugo</category>
+
+      <pubDate>Tue, 03 Sep 2019 13:07:43 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/blog/posts/blogging-with-asciidoctor-and-hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>A &#39;ricing&#39; starting checklist</title>
+      <link>https://foo-dogsquared.github.io/blog/posts/a-ricing-starting-checklist/</link>
+      <category>linux</category>
+      <category>desktop</category>
+      <category>ricing</category>
+
+      <pubDate>Sun, 25 Aug 2019 18:03:43 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/blog/posts/a-ricing-starting-checklist/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>The complete Linux turnabout</title>
+      <link>https://foo-dogsquared.github.io/blog/posts/the-complete-linux-turnabout/</link>
+      <category>linux</category>
+      <category>desktop</category>
+      <category>ricing</category>
+
+      <pubDate>Tue, 20 Aug 2019 20:50:18 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/blog/posts/the-complete-linux-turnabout/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>A site overhaul has occurred</title>
+      <link>https://foo-dogsquared.github.io/blog/posts/a-site-overhaul-has-occurred/</link>
+      <category>self</category>
+      <category>meta</category>
+
+      <pubDate>Thu, 15 Aug 2019 18:10:07 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/blog/posts/a-site-overhaul-has-occurred/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Developing projects with free resources</title>
+      <link>https://foo-dogsquared.github.io/blog/posts/developing-projects-with-free-resources/</link>
+      <category>projects</category>
+      <category>development</category>
+
+      <pubDate>Tue, 30 Apr 2019 12:32:40 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/blog/posts/developing-projects-with-free-resources/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>A freebie&#39;s resource list (mostly related to programming)</title>
+      <link>https://foo-dogsquared.github.io/blog/posts/a-freebies-resource-list-mostly-related-to-programming/</link>
+      <category>bookmarks</category>
+      <category>freebies</category>
+
+      <pubDate>Tue, 01 May 2018 09:25:57 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/blog/posts/a-freebies-resource-list-mostly-related-to-programming/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

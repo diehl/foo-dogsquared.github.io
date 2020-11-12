@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en-us"><title>Implementing configurable Base16 schemes in Hugo themes | Gabriel Arazas</title>
+
+
+
+
+<link rel="stylesheet" href="https://foo-dogsquared.github.io/css/main.min.6a4c8f4d8980f851a02a79bcc9df947eced01d5013b253ef5e3ffaa89fc98127.css" /><meta name="generator" content="Hugo 0.78.0" />
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="no-referrer" />
+<meta name="description" content="I love the Base16 project which provides a template for color schemes and a decentralized set of tools and data to make customization easier." /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Implementing configurable Base16 schemes in Hugo themes"/>
+<meta name="twitter:description" content="I love the Base16 project which provides a template for color schemes and a decentralized set of tools and data to make customization easier."/>
+<meta property="og:title" content="Implementing configurable Base16 schemes in Hugo themes" />
+<meta property="og:description" content="I love the Base16 project which provides a template for color schemes and a decentralized set of tools and data to make customization easier." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://foo-dogsquared.github.io/blog/posts/implementing-configurable-base16-schemes-in-hugo-themes/" />
+<meta property="article:published_time" content="2020-11-11T20:30:00+08:00" />
+<meta property="article:modified_time" content="2020-11-12T11:53:34+08:00" />
+<link rel="canonical" type="text/html" href="https://foo-dogsquared.github.io/blog/posts/implementing-configurable-base16-schemes-in-hugo-themes/" />
+    
+    <script>
+    let theme = window.localStorage.getItem('theme'); 
+    if (theme) {
+        document.documentElement.dataset.theme = theme;
+    }
+</script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/keep-markup/prism-keep-markup.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.5/dist/medium-zoom.min.js"></script>
+<script>window.addEventListener('load', () => mediumZoom('article img', { 'background': 'rgba(0, 0, 0, 0.75)' }))</script>
+
+<body><nav aria-label="Primary navigation">
+  <a class="site__title" href="https://foo-dogsquared.github.io/">Gabriel Arazas</a>
+  <div class="list site__links">
+    
+      <a href="https://foo-dogsquared.github.io/about/">About me</a>
+      <a href="https://foo-dogsquared.github.io/archives/">Archives</a>
+      <a href="https://foo-dogsquared.github.io/blog/">Blog</a>
+      
+    
+  </div>
+</nav>
+
+
+<article class="post--single">
+    <header>
+        <h1>Implementing configurable Base16 schemes in Hugo themes</h1>
+    </header>
+<div class="list post__meta"><time datetime="2020-11-11 20:30:00 &#43;0800 &#43;0800">
+    
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/generic/calendar.svg#calendar"></use>
+  </svg>
+
+    <span style="margin-left: 0.5em;">2020-11-11</span>
+  </time>
+  <time datetime="2020-11-12 11:53:34 &#43;0800 &#43;0800">
+    
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/generic/refresh.svg#refresh"></use>
+  </svg>
+
+    <span style="margin-left: 0.5em;">2020-11-12</span>
+  </time>
+</div>
+    <style>
+    #TableOfContents:not(:empty)::before {
+      content: "Table of contents";
+      font-weight: bold;
+    }
+    </style>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#_the_bigger_picture">The bigger picture</a></li>
+    <li><a href="#_converting_the_schemes_into_css">Converting the schemes into CSS</a></li>
+    <li><a href="#_building_the_css_of_the_site">Building the CSS of the site</a></li>
+    <li><a href="#_creating_the_interface_for_switching_themes">Creating the interface for switching themes</a></li>
+    <li><a href="#_conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+
+
+    <main>
+    
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>I love the <a href="https://github.com/chriskempson/base16">Base16 project</a> which provides a template for color schemes and a decentralized set of tools and data to make customization easier.</p>
+</div>
+<div class="paragraph">
+<p>I would like to implement them for Hugo sites.
+While there are <a href="https://github.com/htdvisser/hugo-base16-theme">existing</a> <a href="https://github.com/yawpitch/base16-hugo">solutions</a>, it can be tedious to configure them.
+I’ve always wondered if there is an easier way to use the schemes as-is.
+It will make color customization very easy in a Hugo theme.</p>
+</div>
+<div class="paragraph">
+<p>The good thing is I was able to implement it.
+The following recording demonstrates that fully.</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="assets/base16-data-themes.webm" poster="A%20demonstration%20of%20the%20data%20themes%20shown%20as%20a%20color%20scheme." controls="">
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="paragraph">
+<p>I also ported the feature into <a href="https://github.com/yihui/hugo-xmin/">Xmin theme</a>.
+<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="assets/hugo-xmin-base16.webm" poster="Multiple%20themes%20on%20Xmin%20theme." controls="">
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="paragraph">
+<p>I like it so much that I also added it in <a href="https://github.com/foo-dogsquared/hugo-theme-more-contentful/">my theme</a> initially.</p>
+</div>
+<div class="paragraph">
+<p>This is not revolutionary in any way as there are themes that have already done it.
+Case in point, <a href="https://themes.gohugo.io/academic/">the Academic theme</a> with their <a href="https://wowchemy.com/docs/customization/#custom-theme">own version</a>.</p>
+</div>
+<div class="paragraph">
+<p>For this demonstration, it accepts a bunch of <a href="https://github.com/chriskempson/base16#scheme-repositories">Base16 schemes</a> in a specific location (e.g., <code>data/themes</code>) and the themes should appear.
+To make that possible, we’ll make use of <a href="https://gohugo.io/templates/data-templates/">data templates</a>, <a href="https://gohugo.io/hugo-pipes/resource-from-template/">resource templates</a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties">CSS variables</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+For this post, I assume you’re already familiar with Hugo along with some experience modifying themes.
+As such, I’ll be showing some stuff that will be quickly glazed over.
+For future references, you also need Hugo v0.74.0 and above.
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_bigger_picture"><a class="anchor" href="#_the_bigger_picture"></a>The bigger picture</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before we head into the code, we need to think and recap the workflow of adding custom Base16 themes.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To add a theme, we simply need to place it in a specified location (e.g., <code>data/themes/</code>).</p>
+</li>
+<li>
+<p>The theme would have to build a stylesheet that dynamically make use of the Base16 palette.</p>
+</li>
+<li>
+<p>The theme’s stylesheet would have to built around the Base16 palette.</p>
+</li>
+<li>
+<p>A theme selection interface would be shown for the user to freely select the themes.</p>
+</li>
+<li>
+<p>The theme should have a default theme in case no custom themes has been added.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For the user, they would only have to put the Base16 schemes and the job’s done.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_converting_the_schemes_into_css"><a class="anchor" href="#_converting_the_schemes_into_css"></a>Converting the schemes into CSS</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Let’s start with building the CSS created from the schemes.
+It is pretty easy to map them into CSS which we’ll make use of CSS variables.</p>
+</div>
+<div class="paragraph">
+<p>Given the following scheme…​</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">scheme: &#34;Default Dark&#34;
+author: &#34;Chris Kempson (http://chriskempson.com)&#34;
+base00: &#34;181818&#34;
+base01: &#34;282828&#34;
+base02: &#34;383838&#34;
+base03: &#34;585858&#34;
+base04: &#34;b8b8b8&#34;
+base05: &#34;d8d8d8&#34;
+base06: &#34;e8e8e8&#34;
+base07: &#34;f8f8f8&#34;
+base08: &#34;ab4642&#34;
+base09: &#34;dc9656&#34;
+base0A: &#34;f7ca88&#34;
+base0B: &#34;a1b56c&#34;
+base0C: &#34;86c1b9&#34;
+base0D: &#34;7cafc2&#34;
+base0E: &#34;ba8baf&#34;
+base0F: &#34;a16946&#34;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>…​will produce the following CSS.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-css" data-lang="css">[data-theme=&#34;Default Dark&#34;]:root {
+  --base00: #181818;
+  --base01: #282828;
+  --base02: #383838;
+  --base03: #585858;
+  --base04: #b8b8b8;
+  --base05: #d8d8d8;
+  --base06: #e8e8e8;
+  --base07: #f8f8f8;
+  --base08: #ab4642;
+  --base09: #dc9656;
+  --base0A: #f7ca88;
+  --base0B: #a1b56c;
+  --base0C: #86c1b9;
+  --base0D: #7cafc2;
+  --base0E: #ba8baf;
+  --base0F: #a16946; }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As for the template, the following code is just one more concise to do that.
+It will be stored as an asset template in <code>assets/templates/scheme.css</code> which <a href="https://gohugo.io/hugo-pipes/resource-from-template/">we can create a resource out of it</a>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-go" data-lang="go">{{- $name := index $ &#34;name&#34; -}}
+{{- $scheme := index $ &#34;scheme&#34; -}}
+{{- if ne $name &#34;_index&#34; }}[data-theme=&#34;{{ $scheme.scheme }}&#34;]{{ end }}:root {
+  {{- range $i := seq 0 15 }}
+  {{- $hex := upper (printf &#34;%02x&#34; $i) }}
+  {{- $key := printf &#34;base%s&#34; $hex }}
+    --{{ $key }}: #{{ index $scheme $key }};
+  {{- end -}}
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this case, we make full use of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties">CSS variables</a> which is <a href="https://caniuse.com/css-variables">supported by ~96% of the major browsers</a> (as of 2020-11-08).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_building_the_css_of_the_site"><a class="anchor" href="#_building_the_css_of_the_site"></a>Building the CSS of the site</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now that we have the template, it’s time to make use of it.
+In one of <a href="https://gohugo.io/hugo-pipes/introduction">Hugo asset processing functions</a>, we can <a href="https://gohugo.io/hugo-pipes/bundling/">combine multiple assets together</a>.
+While not required, it is better to make it so that the client will make one less request for the stylesheet.</p>
+</div>
+<div class="paragraph">
+<p>The following block shows an example on how to make use of it.
+This will vary according how the theme links its CSS files.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-go" data-lang="go">{{- $style := resources.Get &#34;css/style.css&#34; }}
+{{- $styles := slice $style -}}
+
+{{- $scheme_template := resources.Get &#34;templates/scheme.css&#34; }}
+{{- range $name, $scheme := $.Site.Data.themes }}
+  {{- $scheme := $scheme_template | resources.ExecuteAsTemplate (printf &#34;css/themes/%s.css&#34; $name) (dict &#34;name&#34; $name &#34;scheme&#34; $scheme) }}
+  {{- $styles = $styles | append $scheme }}
+{{- end }}
+
+{{- $styles = $styles | resources.Concat &#34;css/index.css&#34; }}
+&lt;link rel=&#34;stylesheet&#34; href=&#34;{{ $styles.Permalink }}&#34; /&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_creating_the_interface_for_switching_themes"><a class="anchor" href="#_creating_the_interface_for_switching_themes"></a>Creating the interface for switching themes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now that the styles are in place, we need to have an interface to switch themes.</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="assets/theme-button.webm" poster="The%20theme%20button." controls="">
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="paragraph">
+<p>In my version, the button will only appear if there’s more than one theme.
+Furthermore, it will store the selected theme in the local storage.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-go" data-lang="go">{{- if gt (len (index $.Site.Data &#34;themes&#34;)) 1 }}
+&lt;div class=&#34;site__theme-btn&#34; aria-label=&#34;Theme toggle&#34;&gt;
+  &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; id=&#34;color-swatch&#34; viewBox=&#34;0 0 20 20&#34; fill=&#34;currentColor&#34;&gt;
+    &lt;path fill-rule=&#34;evenodd&#34; d=&#34;M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z&#34; clip-rule=&#34;evenodd&#34;/&gt;
+  &lt;/svg&gt;
+  &lt;div class=&#34;site__theme-dropdown&#34;&gt;
+    {{- range $filename, $scheme := (index $.Site.Data &#34;themes&#34;) }}
+    {{- $name := cond (eq $filename &#34;_index&#34;) (printf &#34;%s (default)&#34; .scheme) .scheme }}
+    &lt;div class=&#34;site__theme-item&#34; {{ if ne $filename &#34;_index&#34; }}data-theme=&#34;{{ .scheme }}&#34;{{ end }}&gt;{{ $name }}&lt;/div&gt;
+    {{- end }}
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script defer&gt;
+  const themeDropdown = document.querySelector(&#39;.site__theme-btn&#39;);
+  themeDropdown.addEventListener(&#39;click&#39;, (event) =&gt; {
+    const { target } = event;
+    if (target.classList.contains(&#34;site__theme-item&#34;)) {
+      if (target.dataset.theme) {
+        theme = target.dataset.theme;
+        window.localStorage.setItem(&#34;theme&#34;, theme);
+        document.documentElement.dataset.theme = theme;
+      } else {
+        window.localStorage.removeItem(&#34;theme&#34;);
+        delete document.documentElement.dataset.theme;
+      }
+    }
+  });
+&lt;/script&gt;
+
+&lt;style&gt;
+.site__theme-btn svg {
+  width: 2em;
+  height: 2em;
+}
+
+.site__theme-btn {
+  background: var(--base00);
+  border: var(--border-style);
+  position: absolute;
+  padding: 0.5em;
+  right: 0;
+  top: 0;
+}
+
+.site__theme-btn:hover svg {
+  display: none;
+}
+
+.site__theme-dropdown {
+  display: none;
+  position: relative;
+  left: 0;
+}
+
+.site__theme-btn:hover .site__theme-dropdown {
+  display: unset;
+}
+
+.site__theme-dropdown .site__theme-item:hover {
+  background: var(--base0C);
+  color: var(--base00);
+  cursor: pointer;
+}
+&lt;/style&gt;
+{{- end }}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We still have yet to make our selected theme persistent.
+The following snippet will take care of that.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-go" data-lang="go">&lt;script&gt;
+  let theme = window.localStorage.getItem(&#39;theme&#39;);
+  if (theme) {
+    document.documentElement.dataset.theme = theme;
+  }
+&lt;/script&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It should be placed preferably after the main stylesheet was loaded to mitigate against <a href="https://en.wikipedia.org/wiki/Flash_of_unstyled_content">flashes of unstyled content</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion"><a class="anchor" href="#_conclusion"></a>Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>With all of the components in place, we can easily customize the colors for our themes.
+Though, there are some bumps to go through with this approach.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You have to modify the entire CSS files to fit with the Base16 color palette.</p>
+</li>
+<li>
+<p>Styling with 16 colors can be hard especially with the aim of consistency so you’ll have to style the theme carefully.</p>
+</li>
+<li>
+<p>Not all of the schemes will look easy on the eyes nor consistent.</p>
+</li>
+<li>
+<p>It could also be a bane to create a palette of 16 colors that looks nice.</p>
+</li>
+<li>
+<p>Multiple themes, while nice-to-have, is not integral to create a branding which is what most authors aim (I assume).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Indeed, this is just a niche feature.
+However, this feature could be derived into something simpler which is what <a href="https://wowchemy.com/docs/customization/#custom-theme">the Academic theme already has</a>.</p>
+</div>
+<div class="paragraph">
+<p>Still, I hope this is something that Hugo theme developers will consider.
+It will make the Hugo ecosystem more colorful.</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr/>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. For those who are looking for the code, here’s the <a href="assets/hugo-xmin-base16.tar.gz">source</a> for it. I didn’t put it on a remote Git repo since it is just a small fork, anyways.
+</div>
+</div>
+
+    </main>
+
+    <hr>
+    
+    <div class="post__meta--single"><p data-content-publication-date="2020-11-11 20:30:00 &#43;0800 &#43;0800">
+          <span>Published:</span>
+          <span><time datetime="2020-11-11 20:30:00 &#43;0800">2020-11-11 20:30:00 &#43;0800</time></span>
+        </p><p data-content-creation-date="2020-11-08 12:30:27 &#43;0800 &#43;0800">
+            <span>Created:</span>
+            <span><time datetime="2020-11-08 12:30:27 &#43;0800">2020-11-08 12:30:27 &#43;0800</time></span>
+        </p>
+        <p data-content-modification-date="2020-11-12 11:53:34 &#43;0800 &#43;0800">
+            <span>Updated:</span>
+            <span><time datetime="2020-11-12 11:53:34 &#43;0800">2020-11-12 11:53:34 &#43;0800</time></span>
+        </p>
+          <p data-content-hash="93f062a331d59ea1121633789bcd0908513c9c3b">
+            <span>Hash:</span>
+            <span>93f062a331d59ea1121633789bcd0908513c9c3b</span>
+          </p></div>
+</article>
+
+<hr>
+<footer>
+
+<p><a href="#top">Back to top</a></p>
+
+
+
+
+
+
+
+<ul class="list site__socials">
+  
+
+  
+  <li>
+    <a class="site__social-icon" rel="me" href="https://foo-dogsquared.github.io/index.atom" aria-label="RSS">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/rss.svg#rss"></use>
+  </svg>
+    </a>
+  </li><li>
+    <a class="site__social-icon" rel="me" href="https://github.com/foo-dogsquared/" aria-label="GitHub">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/github.svg#github"></use>
+  </svg>
+    </a>
+  </li><li>
+    <a class="site__social-icon" rel="me" href="https://gitlab.com/foo-dogsquared/" aria-label="GitLab">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/gitlab.svg#gitlab"></use>
+  </svg>
+    </a>
+  </li><li>
+    <a class="site__social-icon" rel="me" href="https://mastodon.online/@foodogsquared" aria-label="Mastodon">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/mastodon.svg#mastodon"></use>
+  </svg>
+    </a>
+  </li><li>
+    <a class="site__social-icon" rel="me" href="https://twitter.com/foo_dogsquared" aria-label="Twitter">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/twitter.svg#twitter"></use>
+  </svg>
+    </a>
+  </li></ul>
+
+
+
+
+<p>Unless explicitly stated, all content released here are licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+<p>This site uses <a href="https://prismjs.com/">Prism</a>, <a href="https://www.mathjax.org/">MathJax</a>, and <a href="https://github.com/francoischalifour/medium-zoom">medium-zoom</a>.
+For analytics, it uses <a href="https://goatcounter.com/">GoatCounter</a>.</p>
+
+<small>Generated on 2020-11-12 04:45:13 &#43;0000</small>
+</footer>
+
+<script data-goatcounter="https://foo-dogsquared.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  </body>
+</html>
+

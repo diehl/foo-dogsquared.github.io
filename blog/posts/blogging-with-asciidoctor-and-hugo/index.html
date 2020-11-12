@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en-us"><title>Blogging with Asciidoctor and Hugo | Gabriel Arazas</title>
+
+
+
+
+<link rel="stylesheet" href="https://foo-dogsquared.github.io/css/main.min.6a4c8f4d8980f851a02a79bcc9df947eced01d5013b253ef5e3ffaa89fc98127.css" /><meta name="generator" content="Hugo 0.78.0" />
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="no-referrer" />
+<meta name="description" content="Finally, I’ve found a great blogging workflow with Hugo and Asciidoctor." /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Blogging with Asciidoctor and Hugo"/>
+<meta name="twitter:description" content="Finally, I’ve found a great blogging workflow with Hugo and Asciidoctor."/>
+<meta property="og:title" content="Blogging with Asciidoctor and Hugo" />
+<meta property="og:description" content="Finally, I’ve found a great blogging workflow with Hugo and Asciidoctor." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://foo-dogsquared.github.io/blog/posts/blogging-with-asciidoctor-and-hugo/" />
+<meta property="article:published_time" content="2019-09-03T13:07:43+08:00" />
+<meta property="article:modified_time" content="2020-11-10T01:49:31+08:00" />
+<link rel="canonical" type="text/html" href="https://foo-dogsquared.github.io/blog/posts/blogging-with-asciidoctor-and-hugo/" />
+    
+    <script>
+    let theme = window.localStorage.getItem('theme'); 
+    if (theme) {
+        document.documentElement.dataset.theme = theme;
+    }
+</script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/keep-markup/prism-keep-markup.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.5/dist/medium-zoom.min.js"></script>
+<script>window.addEventListener('load', () => mediumZoom('article img', { 'background': 'rgba(0, 0, 0, 0.75)' }))</script>
+
+<body><nav aria-label="Primary navigation">
+  <a class="site__title" href="https://foo-dogsquared.github.io/">Gabriel Arazas</a>
+  <div class="list site__links">
+    
+      <a href="https://foo-dogsquared.github.io/about/">About me</a>
+      <a href="https://foo-dogsquared.github.io/archives/">Archives</a>
+      <a href="https://foo-dogsquared.github.io/blog/">Blog</a>
+      
+    
+  </div>
+</nav>
+
+
+<article class="post--single">
+    <header>
+        <h1>Blogging with Asciidoctor and Hugo</h1>
+    </header>
+<div class="list post__meta"><time datetime="2019-09-03 13:07:43 &#43;0800 &#43;0800">
+    
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/generic/calendar.svg#calendar"></use>
+  </svg>
+
+    <span style="margin-left: 0.5em;">2019-09-03</span>
+  </time>
+  <time datetime="2020-11-10 01:49:31 &#43;0800 &#43;0800">
+    
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/generic/refresh.svg#refresh"></use>
+  </svg>
+
+    <span style="margin-left: 0.5em;">2020-11-10</span>
+  </time>
+</div>
+    <style>
+    #TableOfContents:not(:empty)::before {
+      content: "Table of contents";
+      font-weight: bold;
+    }
+    </style>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#_prerequisites">Prerequisites</a></li>
+    <li><a href="#_asciidoctor_and_hugo">Asciidoctor and Hugo</a>
+      <ul>
+        <li><a href="#_creating_content_with_asciidoctor">Creating content with Asciidoctor</a></li>
+      </ul>
+    </li>
+    <li><a href="#_syntax_highlighting_without_the_shortcode">Syntax highlighting (without the shortcode)</a>
+      <ul>
+        <li><a href="#_getting_the_files">Getting the files</a></li>
+        <li><a href="#_integrating_it_with_hugo">Integrating it with Hugo</a></li>
+      </ul>
+    </li>
+    <li><a href="#_problems_with_using_the_workflow">Problems with using the workflow</a></li>
+    <li><a href="#_deploying_with_travis_ci">Deploying with Travis CI</a></li>
+    <li><a href="#_conclusion">Conclusion</a></li>
+    <li><a href="#_further_looking">Further looking</a>
+      <ul>
+        <li><a href="#_web">Web</a></li>
+        <li><a href="#_video">Video</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    <main>
+    
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Finally, I’ve found a great blogging workflow with Hugo and Asciidoctor.</p>
+</div>
+<div class="paragraph">
+<p>With the extensive built-in feature set of Hugo and the feature-rich
+text formatting options that Asciidoctor offers, it creates a blogging experience
+composed of easy content management and fun writing experience.</p>
+</div>
+<div class="paragraph">
+<p>As of this writing, there’s only a
+<a href="https://rgielen.net/posts/2019/creating-a-blog-with-hugo-and-asciidoctor/">handful</a>
+<a href="https://opensource.com/article/17/8/asciidoc-web-development">of</a>
+<a href="https://www.bryanklein.com/blog/hugo-asciidoctor-vscode-gitlab-firebase/">articles</a>
+<a href="https://blog.anoff.io/2019-02-17-hugo-render-asciidoc/">and</a>
+<a href="http://discuss.asciidoctor.org/Writing-BLOG-in-Asciidoctor-td7015.html">discussions</a>
+about blogging
+with Hugo and Asciidoctor so I’ll add my 2 cents into the pile with
+the recent version of Hugo and Asciidoctor.
+Think of it like an update report.</p>
+</div>
+<div class="paragraph">
+<p>For future references, here are the following tools and their versions
+used for this post:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Asciidoctor v2.0.10</p>
+</li>
+<li>
+<p>Hugo v0.57.2</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+This is not a full-on tutorial, more like a tour guide of my blogging setup with
+Hugo and Asciidoctor.
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you want to follow through the whole post, I assume you already
+satisfied the following conditions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Installed <a href="https://gohugo.io/">Hugo</a> and <a href="https://asciidoctor.org/">Asciidoctor</a></p>
+</li>
+<li>
+<p>Already know the basics of both tools</p>
+</li>
+<li>
+<p>Already has a Hugo project with a theme installed</p>
+</li>
+<li>
+<p><strong>OPTIONAL</strong>: A <a href="https://travis-ci.org/">Travis CI</a> account (or similar CI/CD services)</p>
+</li>
+<li>
+<p><strong>OPTIONAL</strong>: A <a href="https://github.com/">GitHub</a> account (or similar remote Git repo)</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+If you’re not familiar with Hugo and Asciidoctor, they both have
+a quick start guide. Here’s for <a href="https://gohugo.io/getting-started/quick-start/">Hugo</a> and
+<a href="https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/">Asciidoctor</a>.
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_asciidoctor_and_hugo"><a class="anchor" href="#_asciidoctor_and_hugo"></a>Asciidoctor and Hugo</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In most static site generators including Hugo, <a href="https://daringfireball.net/projects/markdown/">Markdown</a>
+is the one and only first-class citizen when it comes to creating posts.
+However, in recent Hugo versions, there exists the
+<a href="https://blog.anoff.io/2019-02-17-hugo-render-asciidoc/">external helpers</a>
+feature which calls appropriate external programs to certain type of files
+(or file extension).
+Fortunately, Asciidoctor-based files are automatically compiled with
+Asciidoctor so we don’t need to do anything.
+Just have it installed and you’re raring to go.</p>
+</div>
+<div class="sect2">
+<h3 id="_creating_content_with_asciidoctor"><a class="anchor" href="#_creating_content_with_asciidoctor"></a>Creating content with Asciidoctor</h3>
+<div class="paragraph">
+<p>Creating Asciidoctor-based content in a Hugo site is very easy.
+Just create an Asciidoctor file manually or you could go with Hugo’s way
+which is the optimal way.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">hugo new posts/my-first-post.adoc</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And there should be a new Asciidoctor file at <code>content/posts/my-first-post.adoc</code>.</p>
+</div>
+<div class="paragraph">
+<p>Most likely, you would see that it’s formatted like a Markdown file since
+most themes do not have focus for Asciidoctor.</p>
+</div>
+<div class="paragraph">
+<p>One of the features of Hugo is letting you create
+<a href="https://gohugo.io/content-management/archetypes/#readout">content templates</a> (or an
+archetype) for your usual content.
+We create content with Asciidoctor so let’s create a quick template for that.</p>
+</div>
+<div class="paragraph">
+<p>Create a file in <code>archetypes/default.adoc</code>.
+This will be the master template whenever Hugo detects the new content
+has a file extension of <code>.adoc</code>.
+Then, create a template for your Asciidoctor documents.</p>
+</div>
+<div class="paragraph">
+<p>To get an example, here’s my template for my Asciidoctor documents.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asciidoctor" data-lang="asciidoctor">--- <b class="conum">(1)</b>
+title: &#34;{{ replace .Name &#34;-&#34; &#34; &#34; | title }}&#34; <b class="conum">(2)</b>
+date: {{ .Date }} //
+draft: true
+
+categories:
+    - &#34;category1&#34;
+tags:
+    - &#34;tag1&#34;
+    - &#34;tag2&#34;
+---
+
+= {{ replace .Name &#34;-&#34; &#34; &#34; | title }}
+{{ .Site.Author.name }} {{ with .Site.Author.email }}&lt;{{ . }}&gt;{{ end }} <b class="conum">(3)</b>
+{{ dateFormat &#34;2006-01-02&#34; .Date }} <b class="conum">(4)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>The frontmatter.
+Unfortunately, we would still have to put this for Hugo to
+recognize this document as one of the content.</p>
+</li>
+<li>
+<p>Converts the slug of the document to title case.</p>
+</li>
+<li>
+<p>Putting the author in the Asciidoctor preamble along with the email (if there’s any).
+Feel free to discard it.</p>
+</li>
+<li>
+<p>The date in ISO format.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Speaking of frontmatters, native Asciidoctor frontmatter is not recognized.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>You can modify the template to your heart’s content.
+For example, if you use <a href="https://www.mathjax.org/">MathJax</a> for writing mathematical formulas,
+you can <a href="https://asciidoctor.org/docs/user-manual/#activating-stem-support">add the stem attribute</a>
+(<code>:stem:</code>).</p>
+</div>
+<div class="paragraph">
+<p>Since Asciidoctor-based documents only recieve basic support, you still need
+to do some work yourself before you get satisfied with the settings.
+For example, enabling syntax highlighting and styling certain things like
+callouts, admonition blocks, and open blocks.</p>
+</div>
+<div class="paragraph">
+<p>Also, not everything is 100% working so you might encounter some problems
+which is discussed later in the post.
+Nonetheless, it works for the most part and you can still write expressively with the
+heavier feature set of Asciidoctor.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_syntax_highlighting_without_the_shortcode"><a class="anchor" href="#_syntax_highlighting_without_the_shortcode"></a>Syntax highlighting (without the shortcode)</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+As of 2019-09-25, I don’t use a syntax highlighter anymore for my site in the name of performance and consideration for low internet speeds.
+Clearly, I didn’t think ahead about this.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Syntax highlighting can be an important feature for technical blogs especially
+if you often have to show code in your posts.</p>
+</div>
+<div class="paragraph">
+<p>On Asciidoctor, you can
+<a href="https://asciidoctor.org/docs/user-manual/#enabling-source-highlighting">enable syntax highlighting</a>
+with the <code>:source-highlighter:</code> attribute.
+You can compile it on runtime with the executable but it’s not possible with
+Hugo since the arguments passed to it is hardcoded.
+You can, however, enable it for every document you have but as you might
+imagine, it’s not ideal and requires some manual labor.</p>
+</div>
+<div class="paragraph">
+<p>If you’re only relying on the out-of-the-box features from Hugo (READ: if),
+you can get it with the
+<a href="https://gohugo.io/content-management/shortcodes/#highlight"><code>highlight</code> shortcode</a>
+which is going to bite back if you’re going to migrate to another blogging
+platform or static site generator.</p>
+</div>
+<div class="paragraph">
+<p>Still, there are some ways with getting syntax highlighting for your Hugo site
+without the Asciidoctor attribute or the Hugo shortcode.
+It’ll just take some more effort to get through.</p>
+</div>
+<div class="paragraph">
+<p>One of the more reliable ways on enabling it is using syntax
+highlighters like <a href="https://github.com/highlightjs/highlight.js">highlight.js</a>
+or <a href="https://prismjs.com/">PrismJS</a>.
+I’ll be discussing on setting it with PrismJS since it easier and
+that’s what I’m mainly using on my blog.</p>
+</div>
+<div class="paragraph">
+<p>For future references, the version of PrismJS I’m using is at v1.17.1.</p>
+</div>
+<div class="sect2">
+<h3 id="_getting_the_files"><a class="anchor" href="#_getting_the_files"></a>Getting the files</h3>
+<div class="paragraph">
+<p>First, we are going to need the syntax highlighter scripts along
+with their stylesheets, of course.
+I recommend to save the files locally instead of linking them through
+a CDN since they’re often prebuilt with limited languages and settings support.</p>
+</div>
+<div class="paragraph">
+<p>Getting the files for PrismJS is very easy.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Go to the <a href="https://prismjs.com/download.html">download page</a>.</p>
+</li>
+<li>
+<p>Select the minified version.</p>
+</li>
+<li>
+<p>Select all of the languages you think you need to support.</p>
+</li>
+<li>
+<p>Include the <a href="https://prismjs.com/plugins/keep-markup/">&#34;Keep Markup&#34;</a> plugin.</p>
+</li>
+<li>
+<p>Download it.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You’ll need the &#34;Keep Markup&#34; plugin in case you use
+<a href="https://asciidoctor.org/docs/user-manual/#callouts">Asciidoctor callouts</a> since
+PrismJS replaces the HTML elements along with their classes.</p>
+</div>
+<div class="paragraph">
+<p>With the script downloaded, place them somewhere in your Hugo project.
+For this purpose, I’ll assume the script is in the <code>static/js/lib/SYNTAXHIGHLIGHT.js</code>.</p>
+</div>
+<div class="paragraph">
+<p>Don’t forget to choose a theme as well.
+I’ll assume that the stylesheet is in <code>static/css/SYNTAXSTYLESHEET.css</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_integrating_it_with_hugo"><a class="anchor" href="#_integrating_it_with_hugo"></a>Integrating it with Hugo</h3>
+<div class="paragraph">
+<p>Now the hardest part, putting them into use with your Hugo project.</p>
+</div>
+<div class="paragraph">
+<p>Add the syntax highlighter before the end of the document
+body (<code>&lt;body&gt;</code>) tag and the stylesheet inside the <code>&lt;head&gt;</code>.</p>
+</div>
+<div class="paragraph">
+<p>The available location for it depends on the theme.
+I recommend to start looking to the layout folder with the default templates
+of the theme (<code>theme/$NAME_OF_THEME/layouts/_default</code>)
+then the partial folder (<code>theme/$NAME_OF_THEME/layouts/partials</code>).</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+You might want to start at the base template
+(<code>theme/$NAME_OF_THEME/layouts/_default/baseof.html</code>).
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Copy the appropriate file from the theme folder to your own layout
+folder and link it similar to the following code listing.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;!-- Inside of the head element --&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;{{ &#34;css/SYNTAXSTYLESHEET.css&#34; | absURL }}&#34;&gt;
+
+&lt;!-- ... --&gt;
+
+&lt;!-- Before the end of the body tag --&gt;
+&lt;script src=&#34;{{ &#34;js/lib/SYNTAXHIGHLIGHT.js&#34; | absURL }}&#34;&gt;&lt;/script&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The setup is done!
+That leaves one less problem for content migration in case
+you want to move out of Hugo.
+You’ll thank yourself for doing so.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_problems_with_using_the_workflow"><a class="anchor" href="#_problems_with_using_the_workflow"></a>Problems with using the workflow</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>While Hugo and Asciidoctor is great and all, there are a couple of
+problems with this setup.</p>
+</div>
+<div class="paragraph">
+<p>The most obvious is the HTML output of Asciidoctor with the default
+backend is not great and leaves a lot of things to be desired.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="assets/asciidoctor-sample-html.webp" alt="`&lt;div&gt;` then a `&lt;p&gt;` for a paragraph" width="really?"/>
+</div>
+<div class="title">Figure 1. <code>&lt;div&gt;</code> then a <code>&lt;p&gt;</code> for a paragraph, really?</div>
+</div>
+<div class="paragraph">
+<p>It’s not semantic and it is unconventional.
+Not only that it’s a pain to style it with CSS but also breaks a lot
+of the accessibility features like screen readers since it
+relies on certain HTML tag structures.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+You can get around this by using the
+<a href="https://github.com/jirutka/asciidoctor-html5s">Asciidoctor HTML5s backend</a> to
+produce the correct and semantic web-friendly output.
+Remember, the arguments passed from Hugo to Asciidoctor is hardcoded.
+You would have to trick Hugo somehow into passing your own arguments.
+Fortunately, you don’t need to worry since
+<a href="https://ratfactor.com/hugo-adoc-html5s/">there’s already someone out there shared the details</a>.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Another problem you could encounter (and maybe bash your head against) is
+the basic support for Asciidoctor itself if you don’t want to rely much on
+creating hacks and workarounds.</p>
+</div>
+<div class="paragraph">
+<p>As previously mentioned, Hugo supports Asciidoctor through external helpers.
+External helpers are relatively new and more like an experimental feature.
+There is a proposal on improving it by
+<a href="https://github.com/gohugoio/hugo/issues/6089">adding user configurations</a>
+so at least there’s hope for this particular feature to expand.</p>
+</div>
+<div class="paragraph">
+<p>There’s also the fact that not all built-in feature of Hugo (such as
+<a href="https://gohugo.io/content-management/toc/">table of contents</a>) works within
+Asciidoctor (and possibly other non-Markdown formats) content.
+Fortunately,
+<a href="https://asciidoctor.org/docs/user-manual/">Asciidoctor is quite extensive by itself</a>
+and there’s not a lot of Hugo features that doesn’t work and you won’t likely
+need them anyway.</p>
+</div>
+<div class="paragraph">
+<p>Also, native Asciidoctor front matter doesn’t work as previously mentioned.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_deploying_with_travis_ci"><a class="anchor" href="#_deploying_with_travis_ci"></a>Deploying with Travis CI</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://rgielen.net/posts/2019/creating-a-dockerized-hugo-asciidoctor-toolchain/">Some</a>
+<a href="https://axdlog.com/2018/using-hugo-and-travis-ci-to-deploy-blog-to-github-pages-automatically/">posts</a>
+<a href="https://www.martinkaptein.com/blog/hugo-with-travis-ci-on-gh-pages/">are</a>
+<a href="https://jellis18.github.io/post/2017-12-03-continuous-integration-hugo/">floating</a>
+<a href="https://insileco.github.io/2018/03/30/hugo-github-travis-a-step-in-continuous-deployment/">around</a>
+on how to make a done-and-forget deployment toolchain with different tools.</p>
+</div>
+<div class="paragraph">
+<p>Personally, I pass the full effort of deploying my blog to a CI/CD workflow.
+I use <a href="https://travis-ci.org/">Travis CI</a> for the job.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+You can also take a view on the <a href="https://github.com/foo-dogsquared/blog">GitHub repo of my blog</a> for
+an idea how it works on a larger picture.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Here’s the configuration I’ve used to deploy my Hugo blog:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">dist: bionic <b class="conum">(1)</b>
+language: generic
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install ruby
+  # Assuming that the GitHub API is at version 4.0 <b class="conum">(2)</b>
+  - curl https://api.github.com/repos/gohugoio/hugo/releases/latest | grep &#34;hugo_extended.*deb&#34; | grep &#34;browser_download_url&#34; | cut --delimiter=&#34;:&#34; --delimiter=&#34;\&#34;&#34; --fields=4 | wget -qi -
+  - sudo dpkg -i hugo*.deb
+  - sudo gem install asciidoctor <b class="conum">(3)</b>
+script:
+  - hugo <b class="conum">(4)</b>
+deploy: <b class="conum">(5)</b>
+  local_dir: &#34;public/&#34;
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  target_branch: gh-pages
+  on:
+    branch:
+      - demo
+      - master</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here’s the breakdown of the configuration:</p>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>It will use a Linux-based machine with Ubuntu Bionic (18.04) as the operating system.</p>
+</li>
+<li>
+<p>Downloads the latest Hugo binary from its repo through GitHub release and installs it.</p>
+</li>
+<li>
+<p>Installs the Asciidoctor toolchain.</p>
+</li>
+<li>
+<p>Build the Hugo site.</p>
+</li>
+<li>
+<p>Deploy the build folder to the <code>gh-pages</code> branch of my GitHub repo when the branch
+occurred at <code>demo</code> or <code>master</code>.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The configuration should work as long as the GitHub API version is at version 4.
+You may have to do a bit of API debugging and tweaking to get it right.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Depending on the web hosting service provider, you may have to do additional work such as
+pre-compressing your files or configuring your server.
+Since the blog is hosted using <a href="https://pages.github.com/">GitHub Pages</a>,
+I don’t have to configure some stuff (unfortunately for me).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion"><a class="anchor" href="#_conclusion"></a>Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>That’s all of the Hugo and Asciidoctor stuff you need to know for now.</p>
+</div>
+<div class="paragraph">
+<p>Just look for more examples and you’ll get more idea.
+You can take <a href="https://github.com/foo-dogsquared/blog">the GitHub repo of my blog</a>
+for a starter point.</p>
+</div>
+<div class="paragraph">
+<p>Personally, blogging with Hugo and Asciidoctor sums up to be fun.
+So fun that
+<a href="https://github.com/foo-dogsquared/hugo-theme-terminal-plus-minus">I eventually created a theme that focuses on supporting Asciidoctor content along with other stuff</a>.</p>
+</div>
+<div class="paragraph">
+<p>Not perfect but it still offers a lot of satisfying and more expressive
+writing experience compared to writing with Markdown.</p>
+</div>
+<div class="paragraph">
+<p>With all of the imperfections this workflow has, there’s some stuff to look forward in the
+future especially with Hugo’s external helpers feature.
+Hopefully, more tools will take notice of Asciidoctor and how it could
+be great for writing technical and web-based content.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_further_looking"><a class="anchor" href="#_further_looking"></a>Further looking</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_web"><a class="anchor" href="#_web"></a>Web</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a href="https://asciidoctor.org/docs/"><em>Asciidoctor documentation</em></a></dt>
+<dd>
+<p>Getting started with Asciidoctor is quite easy with the official documentation.
+It should be able to help you a long way into getting comfortable with it.
+If you’re getting the ropes of it, I recommend to check out the
+<a href="https://asciidoctor.org/docs/user-manual/">user manual</a> often.</p>
+</dd>
+<dt class="hdlist1"><a href="https://ratfactor.com/hugo-adoc-html5s/"><em>Better Hugo/AsciiDoc HTML</em> by <strong>David Gauer</strong> (ratfactor.com)</a></dt>
+<dd>
+<p>It’s a short and sweet post on how to make HTML output of Asciidoctor way better
+than before with the UNIX PATH trickery trick that I’ve mentioned in the article.</p>
+</dd>
+<dt class="hdlist1"><a href="https://gohugo.io/documentation/"><em>Hugo documentation</em></a></dt>
+<dd>
+<p>The documentation of Hugo is great.
+Has a lot of clear and concise information for newcomers and has an intuitive
+navigation of the content structure.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_video"><a class="anchor" href="#_video"></a>Video</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a href="https://www.youtube.com/playlist?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3"><em>Hugo tutorial series</em> by <strong>Mike Dane</strong></a></dt>
+<dd>
+<p>A video series by <a href="https://www.youtube.com/channel/UCvmINlrza7JHB1zkIOuXEbw">Mike Dane</a>.
+It’s also featured on the official Hugo documentation as a video resource.
+The video series is well-done and offers brief and concise explanation.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+
+    </main>
+
+    <hr>
+    
+    <div class="post__meta--single"><p data-content-publication-date="2019-09-03 13:07:43 &#43;0800 &#43;0800">
+          <span>Published:</span>
+          <span><time datetime="2019-09-03 13:07:43 &#43;0800">2019-09-03 13:07:43 &#43;0800</time></span>
+        </p>
+        <p data-content-modification-date="2020-11-10 01:49:31 &#43;0800 &#43;0800">
+            <span>Updated:</span>
+            <span><time datetime="2020-11-10 01:49:31 &#43;0800">2020-11-10 01:49:31 &#43;0800</time></span>
+        </p>
+          <p data-content-tags="[&#34;\u003ca href=\&#34;/tags#writing\&#34;\u003ewriting\u003c/a\u003e&#34;,&#34;\u003ca href=\&#34;/tags#ssg\&#34;\u003essg\u003c/a\u003e&#34;,&#34;\u003ca href=\&#34;/tags#hugo\&#34;\u003ehugo\u003c/a\u003e&#34;]">
+            <span>Topic:</span>
+            <span><a href="https://foo-dogsquared.github.io/tags#writing">writing</a>.<a href="https://foo-dogsquared.github.io/tags#ssg">ssg</a>.<a href="https://foo-dogsquared.github.io/tags#hugo">hugo</a></span>
+          </p>
+          <p data-content-hash="98124f047930ef4a7e37d1270a09dc31d621d9f9">
+            <span>Hash:</span>
+            <span>98124f047930ef4a7e37d1270a09dc31d621d9f9</span>
+          </p></div>
+</article>
+
+<hr>
+<footer>
+
+<p><a href="#top">Back to top</a></p>
+
+
+
+
+
+
+
+<ul class="list site__socials">
+  
+
+  
+  <li>
+    <a class="site__social-icon" rel="me" href="https://foo-dogsquared.github.io/index.atom" aria-label="RSS">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/rss.svg#rss"></use>
+  </svg>
+    </a>
+  </li><li>
+    <a class="site__social-icon" rel="me" href="https://github.com/foo-dogsquared/" aria-label="GitHub">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/github.svg#github"></use>
+  </svg>
+    </a>
+  </li><li>
+    <a class="site__social-icon" rel="me" href="https://gitlab.com/foo-dogsquared/" aria-label="GitLab">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/gitlab.svg#gitlab"></use>
+  </svg>
+    </a>
+  </li><li>
+    <a class="site__social-icon" rel="me" href="https://mastodon.online/@foodogsquared" aria-label="Mastodon">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/mastodon.svg#mastodon"></use>
+  </svg>
+    </a>
+  </li><li>
+    <a class="site__social-icon" rel="me" href="https://twitter.com/foo_dogsquared" aria-label="Twitter">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/twitter.svg#twitter"></use>
+  </svg>
+    </a>
+  </li></ul>
+
+
+
+
+<p>Unless explicitly stated, all content released here are licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+<p>This site uses <a href="https://prismjs.com/">Prism</a>, <a href="https://www.mathjax.org/">MathJax</a>, and <a href="https://github.com/francoischalifour/medium-zoom">medium-zoom</a>.
+For analytics, it uses <a href="https://goatcounter.com/">GoatCounter</a>.</p>
+
+<small>Generated on 2020-11-12 04:45:12 &#43;0000</small>
+</footer>
+
+<script data-goatcounter="https://foo-dogsquared.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  </body>
+</html>
+

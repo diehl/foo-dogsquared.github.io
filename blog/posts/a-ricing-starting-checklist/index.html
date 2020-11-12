@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en-us"><title>A &#39;ricing&#39; starting checklist | Gabriel Arazas</title>
+
+
+
+
+<link rel="stylesheet" href="https://foo-dogsquared.github.io/css/main.min.6a4c8f4d8980f851a02a79bcc9df947eced01d5013b253ef5e3ffaa89fc98127.css" /><meta name="generator" content="Hugo 0.78.0" />
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="no-referrer" />
+<meta name="description" content="I just started ricing at the start of August 2019." /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A &#39;ricing&#39; starting checklist"/>
+<meta name="twitter:description" content="I just started ricing at the start of August 2019."/>
+<meta property="og:title" content="A &#39;ricing&#39; starting checklist" />
+<meta property="og:description" content="I just started ricing at the start of August 2019." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://foo-dogsquared.github.io/blog/posts/a-ricing-starting-checklist/" />
+<meta property="article:published_time" content="2019-08-25T18:03:43+08:00" />
+<meta property="article:modified_time" content="2020-11-10T01:49:31+08:00" />
+<link rel="canonical" type="text/html" href="https://foo-dogsquared.github.io/blog/posts/a-ricing-starting-checklist/" />
+    
+    <script>
+    let theme = window.localStorage.getItem('theme'); 
+    if (theme) {
+        document.documentElement.dataset.theme = theme;
+    }
+</script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/keep-markup/prism-keep-markup.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.5/dist/medium-zoom.min.js"></script>
+<script>window.addEventListener('load', () => mediumZoom('article img', { 'background': 'rgba(0, 0, 0, 0.75)' }))</script>
+
+<body><nav aria-label="Primary navigation">
+  <a class="site__title" href="https://foo-dogsquared.github.io/">Gabriel Arazas</a>
+  <div class="list site__links">
+    
+      <a href="https://foo-dogsquared.github.io/about/">About me</a>
+      <a href="https://foo-dogsquared.github.io/archives/">Archives</a>
+      <a href="https://foo-dogsquared.github.io/blog/">Blog</a>
+      
+    
+  </div>
+</nav>
+
+
+<article class="post--single">
+    <header>
+        <h1>A &#39;ricing&#39; starting checklist</h1>
+    </header>
+<div class="list post__meta"><time datetime="2019-08-25 18:03:43 &#43;0800 &#43;0800">
+    
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/generic/calendar.svg#calendar"></use>
+  </svg>
+
+    <span style="margin-left: 0.5em;">2019-08-25</span>
+  </time>
+  <time datetime="2020-11-10 01:49:31 &#43;0800 &#43;0800">
+    
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/generic/refresh.svg#refresh"></use>
+  </svg>
+
+    <span style="margin-left: 0.5em;">2020-11-10</span>
+  </time>
+</div>
+    <style>
+    #TableOfContents:not(:empty)::before {
+      content: "Table of contents";
+      font-weight: bold;
+    }
+    </style>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#_a_display_server">A display server</a></li>
+    <li><a href="#_a_desktop_environmentwindow_manager">A desktop environment/window manager</a></li>
+    <li><a href="#_a_compositor">A compositor</a></li>
+    <li><a href="#_a_display_manager">A display manager</a></li>
+    <li><a href="#_gui_library_themes">GUI library themes</a></li>
+    <li><a href="#_color_scheme_generator">Color scheme generator</a>
+      <ul>
+        <li><a href="#_pywal">pywal</a></li>
+        <li><a href="#_wpgtk">wpgtk</a></li>
+      </ul>
+    </li>
+    <li><a href="#_a_notification_system">A notification system</a></li>
+    <li><a href="#_a_dotfiles_manager">A dotfiles manager</a></li>
+    <li><a href="#_a_backup_tool">A backup tool</a></li>
+    <li><a href="#_anything_else">Anything else?</a></li>
+    <li><a href="#_further_looking">Further looking</a>
+      <ul>
+        <li><a href="#_web">Web</a></li>
+        <li><a href="#_video">Video</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    <main>
+    
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>I just started ricing at the start of August 2019.
+So I made this list of things you might want to know when
+getting started with ricing your setup so that I couldn’t
+forget it easily.</p>
+</div>
+<div class="paragraph">
+<p>Hopefully, it can be useful for you, too.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The listed programs is mostly applied to
+Linux-based systems.
+You can look for some alternatives if you’re using
+anything else.
+Sorry, can’t help much with that.
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_display_server"><a class="anchor" href="#_a_display_server"></a>A display server</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In order to fully make use of window programs like
+Firefox, Inkscape, GIMP, Blender, and many others, you have
+to install a display server (or windows server).
+Otherwise, you would be stuck using with a command line.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+This is required for any setup with a graphical
+desktop.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>There are
+<a href="https://en.wikipedia.org/wiki/List_of_display_servers">many display servers out there</a>
+but one of the more popular choices are <a href="https://www.x.org/wiki/">Xorg</a>
+(an implementation of X protocol) and
+<a href="https://wayland.freedesktop.org/">Wayland</a>.</p>
+</div>
+<div class="paragraph">
+<p>If your hardware is a bit old, I recommend to stick with
+Xorg since it is older thus more developed than Wayland.
+Wayland is still a relatively new technology still in development
+but still keep an eye for it since it is meant to replace X
+with simpler options.</p>
+</div>
+<div class="paragraph">
+<p>Also, I recommend to look at their respective Arch Linux wiki entry
+if you want to get started.
+(Pretty much I recommend the Arch Linux wiki for most of the
+Linux stuff, really.)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_desktop_environmentwindow_manager"><a class="anchor" href="#_a_desktop_environmentwindow_manager"></a>A desktop environment/window manager</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In order to have that graphical desktop experience, you
+either need a <em>desktop environment</em> or a <em>window manager</em>
+(or even both).</p>
+</div>
+<div class="paragraph">
+<p>A window manager does what its name does: manages and controls
+windows from its appearance, content, and behavior.
+There are
+<a href="https://wiki.archlinux.org/index.php/window_manager">many choices to choose from</a>
+but personally I recommend <a href="https://i3wm.org/">i3</a>, <a href="https://swaywm.org/">Sway</a>,
+<a href="https://wiki.archlinux.org/index.php/Bspwm">Bspwm</a>, and
+<a href="https://awesomewm.org/">awesome</a>.</p>
+</div>
+<div class="paragraph">
+<p>Usually with a window manager, you can extend more stuff with it
+such as a status bar and a lock screen to improve your
+desktop experience.
+Anyways, you should try and experiment with the configuration
+of the window manager of your choosing.</p>
+</div>
+<div class="paragraph">
+<p>Meanwhile, a desktop environment is a more detailed setup
+built on top of a window manager.
+They have more built-in stuff like a status bar,
+a session manager, a display manager, and a window manager of
+their own.</p>
+</div>
+<div class="paragraph">
+<p>Like window managers,
+<a href="https://wiki.archlinux.org/index.php/Desktop_environment#List_of_desktop_environments">You have many choices</a>
+here.
+For my personal recommendations, <a href="https://xfce.org/">Xfce</a> and
+<a href="https://www.kde.org/plasma-desktop">KDE Plasma</a> is the
+top-tier choices.</p>
+</div>
+<div class="paragraph">
+<p>Usually, desktop environments let you replace their
+window manager (or any of their components, if they provided
+one).
+For example, you can install Xfce and replace their built-in
+window manager (<a href="https://docs.xfce.org/xfce/xfwm4/start">Xfwm</a>)
+with i3wm.</p>
+</div>
+<div class="paragraph">
+<p>Don’t forget to use some themes for the desktop environment
+of your choice.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+Always check for the requirements of the window manager
+or the desktop environment before trying it.
+It can affect performance or simply won’t work because
+of incompatibility.
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_compositor"><a class="anchor" href="#_a_compositor"></a>A compositor</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A <a href="https://en.wikipedia.org/wiki/Compositing_window_manager">compositor</a>
+(or a composite manager) is a program that provides
+an off-screen buffer for application windows.
+Thus, repainting and rendering application windows will mitigate
+against common graphical issues such as screen tearing or leaving a
+&#34;trail&#34; or a black block.
+Those issues will be way more obvious when moving your windows or
+using an application with a lot of moving parts on your screen.
+(I can’t record it since it’s not present when viewing it in a video.)</p>
+</div>
+<div class="paragraph">
+<p>It can also provide additional processes with those application
+windows such as adding transitions, adding animations, and
+applying opacity for the windows.
+In other words, it can add pizzazz to your setup.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+Like window managers, always check for the requirements
+before using it.
+Certain compositors can only support certain setups or
+will break under certain conditions in your setup.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>One of the more popular compositors are
+<a href="https://github.com/yshui/compton">Compton</a> for X window system
+and <a href="https://swaywm.org/">Sway</a> for Wayland.</p>
+</div>
+<div class="paragraph">
+<p>Once you have configured the compositor, you can certainly see
+some notable differences with it.</p>
+</div>
+<div class="paragraph">
+<p>Since I have installed Xorg which is an implementation of the X window
+system, I’m using Compton.
+The following videos are demonstrations using without and with Compton
+running in the background.</p>
+</div>
+<div class="paragraph">
+<p>Here’s a video of my setup using no Compton.</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="assets/compton-less-demo.mp4" width="100%" controls="">
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="paragraph">
+<p>Here’s another video of my setup using Compton this time.
+Take note that it uses the default config located at
+<code>/etc/xorg/compton.conf</code>.</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="assets/compton-demo.mp4" width="100%" controls="">
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_display_manager"><a class="anchor" href="#_a_display_manager"></a>A display manager</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A display manager is a graphical interface for logging in a session.
+It could be pretty useful for those who are using with multiple users
+that might be intimidated with using a TTY as their first screen.
+Most importantly, it could be used for additional swag.</p>
+</div>
+<div class="paragraph">
+<p>Aside from giving the user login interface a makeover, it can also
+do other things such as authenticating users and session management.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://wiki.archlinux.org/index.php/Display_manager#List_of_display_managers">There is a list of choices out there</a>
+and my pick is <a href="https://github.com/CanonicalLtd/lightdm/">LightDM</a>
+since I find it easy to start and it does have a cool login interface.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_gui_library_themes"><a class="anchor" href="#_gui_library_themes"></a>GUI library themes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>GUI library such as <a href="https://www.gtk.org/">GTK</a> and
+<a href="https://www.qt.io/">Qt</a> might have a unified configuration that
+describes the widgets appearance, color scheme, and fonts.</p>
+</div>
+<div class="paragraph">
+<p>I’ll be mainly discussing on GTK theming since a lot of widely used
+programs are built with it.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.gtk.org/">GTK</a> is a cross-platform free and open source GUI library.
+Popular programs built (as of this writing) with the library include
+<a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a>,
+<a href="https://www.thunderbird.net/">Thunderbird</a>,
+<a href="http://www.gimp.org/">GIMP</a>, and <a href="http://www.inkscape.org/">Inkscape</a>.</p>
+</div>
+<div class="paragraph">
+<p>There are many ways on configuring your color scheme and icon sets but
+I recommend to start with <a href="http://wiki.lxde.org/en/LXAppearance">LXAppearance</a>
+or <a href="https://github.com/themix-project/oomox">oomox</a>.
+Even better you could use them to take a look at a GTK config file and edit
+it yourself afterwards.</p>
+</div>
+<div class="paragraph">
+<p>You could also not customize it and leave it to the distro.
+For Arch Linux, it has Raleigh as the default GTK theme which looks
+very dated if you ask me.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="assets/gtk-raleigh-theme-demo.webp" alt="GTK Raleigh theme"/>
+</div>
+<div class="title">Figure 1. GTK Raleigh theme</div>
+</div>
+<div class="paragraph">
+<p>For my custom configuration, I chose the <a href="https://github.com/NicoHood/arc-theme">Arc</a>
+theme along with its <a href="https://github.com/NicoHood/arc-icon-theme">icon set</a> simply
+because they’re the popular choice. I also think the darker scheme is pretty
+cool.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="assets/gtk-arc-darker-theme-demo.webp" alt="GTK Arc Darker theme"/>
+</div>
+<div class="title">Figure 2. GTK Arc Darker theme</div>
+</div>
+<div class="paragraph">
+<p>You can look for more GTK themes at <a href="https://www.gnome-look.org/">GNOME Look</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Not all GTK-built programs follow and apply the configuration.
+You could also set individual themes for each program given that they provided one.
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_color_scheme_generator"><a class="anchor" href="#_color_scheme_generator"></a>Color scheme generator</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Having your own color scheme for your setup is very great.
+However, if you’re inexperienced with choosing your own colors,
+a color scheme generator can help.</p>
+</div>
+<div class="paragraph">
+<p>There are a lot software built for it such as <a href="https://coolors.co/">Coolors</a>,
+<a href="https://color.adobe.com/create">Adobe Color</a>, and
+<a href="https://colorpalettes.net/">a color pallete sharing site</a> but
+there are two particular program that I personally recommend
+because they’re specifically made for ricing.</p>
+</div>
+<div class="sect2">
+<h3 id="_pywal"><a class="anchor" href="#_pywal"></a>pywal</h3>
+<div class="paragraph">
+<p>Enter <a href="https://github.com/dylanaraps/pywal">pywal</a>, a program that easily generates a
+color scheme and replace it with your already existing terminal setup.
+You could also make some templates in order to apply it to other programs like
+<a href="https://github.com/DaveDavenport/rofi">rofi</a>, for example.</p>
+</div>
+<div class="paragraph">
+<p>One of the most popular highlights of pywal is that you can generate color schemes
+with images.</p>
+</div>
+<div class="paragraph">
+<p>So far, I’m content with the color scheme generated from
+<a href="https://www.reddit.com/r/wallpapers/comments/cckpj0/i_made_this_simple_and_clean_drawing_over_the/">this image</a>.
+It’s pretty easy on the eyes and it is also cool to be background image for
+your desktop.</p>
+</div>
+<div class="paragraph">
+<p>You can certainly automate it to make it as your theme selector similar
+to how <a href="https://www.youtube.com/watch?v=Es79N_9BblE">Luke Smith</a> did with his setup.
+Or just like how
+<a href="https://www.reddit.com/r/unixporn/comments/973qcn/i3rofipywal_automated_theme_switching_with_rofi/">this ricer from <code>/r/unixporn</code> made rofi to be the theme selector</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_wpgtk"><a class="anchor" href="#_wpgtk"></a>wpgtk</h3>
+<div class="paragraph">
+<p>wpgtk, as it is described in its <a href="https://github.com/deviantfero/wpgtk">own GitHub page</a>,
+is a colorscheme, wallpaper and template manager for *nix-based systems.
+It is what it is.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>It can generate and manage different color scheme with
+<a href="https://github.com/dylanaraps/pywal">pywal</a> which I discussed it shortly earlier.</p>
+</li>
+<li>
+<p>It can manage wallpapers and templates.</p>
+</li>
+<li>
+<p>Comes with a graphical user interface built with <a href="https://www.gtk.org/">GTK</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It is a pretty cool tool and can turn ricing into a more satisfying
+experience with the convenience it offers.
+I fully recommend looking into this tool if you want a cool color scheme
+generator and a manager for common ricing tasks.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_notification_system"><a class="anchor" href="#_a_notification_system"></a>A notification system</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A status bar is not enough fill up some info especially if it’s not
+needed that much.
+A desktop notification system could be handy for those situations.
+It can also be useful for immediate feedback that is shortly
+not needed after.</p>
+</div>
+<div class="paragraph">
+<p>In order to setup a notification system working, you need two components:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a notifier that sends notifications</p>
+</li>
+<li>
+<p>a notification daemon that recieves those notifications</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+If you’re using with a desktop environment, usually it already
+has a notification system installed. Feel free to skip this section
+if you want.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>For the former, <a href="https://developer.gnome.org/libnotify/"><code>libnotify</code></a>
+(with <code>notify-send</code>) is the toolbelt for that.</p>
+</div>
+<div class="paragraph">
+<p>For the latter, you have more choices.
+In my setup, I have <a href="https://dunst-project.org/">Dunst</a> since I see
+it included in a lot of posts at <code>/r/unixporn</code>.</p>
+</div>
+<div class="paragraph">
+<p>Dunst is also easy to configure and extend.
+You can change the color of the text and background, change the
+appearance for notifications of varying urgency levels, and integrate
+scripts that’ll run whenever a certain type of notification has been
+recieved.
+It’s pretty fantastic.</p>
+</div>
+<div class="paragraph">
+<p>One very useful example in my case is making a notification for screenshots.</p>
+</div>
+<div class="paragraph">
+<p>I made a script which takes a screenshot which will be binded with the <code>PrintScr</code> key
+which will be used in i3.</p>
+</div>
+<div class="paragraph">
+<p>In i3, running a script takes place in the background so there’s no way to know
+if the screenshot capture is a success or not unless you send some data to a
+server. Simply sending a notification with <code>notify-send</code> while running Dunst in the
+background can go a long way.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="assets/dunst-screenshot-demo.webp" alt="Using dunst for screenshot notifications"/>
+</div>
+<div class="title">Figure 3. Using dunst for screenshot notifications</div>
+</div>
+<div class="paragraph">
+<p>I also made it to send notifications for delayed screenshots.</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="assets/dunst-delayed-screenshot-demo.mp4" width="100%" controls="">
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="paragraph">
+<p>If you’re curious about the screenshot script, you can find it
+<a href="https://github.com/foo-dogsquared/dotfiles/blob/master/.scripts/maim-screenshot.sh">here</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_dotfiles_manager"><a class="anchor" href="#_a_dotfiles_manager"></a>A dotfiles manager</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Managing your dotfiles can be tricky since different programs have
+different ways on where to store their configuration files.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Dotfiles simply means your configurations of the installed
+programs. Its name also came from how Linux considers a file/folder
+with a period in front of the name to be hidden (i.e., <code>.config</code>,
+<code>.vimrc</code>, <code>.bashrc</code>).
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>If you would continue with no tool at all, you would most likely:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>edit and manage it by hand</p>
+</li>
+<li>
+<p>create a folder where all of your dotfiles are in and symlink it
+in various locations</p>
+</li>
+<li>
+<p>create a script that’ll manage your dotfiles for you ;p</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Depending on your experience, it could be elegant or a nightmare.
+Which is why I totally recommend to use a dotfiles manager.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://wiki.archlinux.org/index.php/Dotfiles">You have some choices</a>
+(or you know create one yourself) for managing your dotfiles easily.
+For me, I chose <a href="https://www.gnu.org/software/stow/"><code>stow</code></a> since it is
+widely distributed among Linux-based systems. The runner-up is
+<a href="https://github.com/TheLocehiliosan/yadm"><code>yadm</code></a> which integrates the
+concepts usually found in Git.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_backup_tool"><a class="anchor" href="#_a_backup_tool"></a>A backup tool</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Imagine spending time for your setup that you visioned then having
+to put all of that down for a ridiculous reason.</p>
+</div>
+<div class="paragraph">
+<p>That’s what backups are for.
+It’s a simple thing to backup your dotfiles whether through simple
+copy-pasting it in another storage device, an online drive, or
+a self-hosted server.</p>
+</div>
+<div class="paragraph">
+<p>For my dotfiles, I simply use a remote Git repo as my online &#34;backup&#34;.
+I also have the benefit of putting my dotfiles under version control
+which means I can easily experiment with my settings.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_anything_else"><a class="anchor" href="#_anything_else"></a>Anything else?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Your usual programs, of course.
+Your web browser, text editor, terminal, file manager, or even some
+games (granted that they support it on Linux).</p>
+</div>
+<div class="paragraph">
+<p>If you feeling adventurous and want to explore more, you can
+<a href="https://wiki.archlinux.org/index.php/List_of_applications">view this application list on Arch Linux wiki</a>.
+Or explore around on GitHub, GitLab, or wherever that is.</p>
+</div>
+<div class="paragraph">
+<p>You can also check out
+<a href="https://wiki.archlinux.org/index.php/Desktop_environment#Custom_environments">this list of components</a>
+if you want more stuff for your desktop setup.</p>
+</div>
+<div class="paragraph">
+<p>If you want some inspiration for your ricing journey, be sure
+to check out <a href="https://www.reddit.com/r/unixporn/"><code>/r/unixporn</code></a>.
+The amount of creativity is overflowing from the community.</p>
+</div>
+<div class="paragraph">
+<p>I also have my own set of dotfiles that you can check it
+up on <a href="https://github.com/foo-dogsquared/dotfiles">my GitHub repo</a>
+(also have it on <a href="https://gitlab.com/foo-dogsquared/dotfiles">GitLab as a mirror</a>).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_further_looking"><a class="anchor" href="#_further_looking"></a>Further looking</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can find most of the valuable stuff on <a href="https://wiki.archlinux.org/">Arch Linux wiki</a>.
+Most of the concepts apply even when you’re not using Arch Linux.
+The documentation is pretty thorough and periodically updated so be sure to
+check it out often.</p>
+</div>
+<div class="sect2">
+<h3 id="_web"><a class="anchor" href="#_web"></a>Web</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a href="https://wiki.archlinux.org/index.php/Desktop_environment"><em>Desktop environment</em> from <strong>Arch Wiki</strong></a></dt>
+<dd>
+<p>An Arch Linux wiki entry on desktop environments.
+Features a list of desktop environments with their own
+wiki page and a list of components that make up a
+graphical environment.</p>
+</dd>
+<dt class="hdlist1"><a href="https://wiki.archlinux.org/index.php/Desktop_notifications"><em>Desktop notifications</em> from <strong>Arch Wiki</strong></a></dt>
+<dd>
+<p>An entry on desktop notifications on Arch Linux wiki.
+Also contains a list of programs to look out for and
+information on setting up one.</p>
+</dd>
+<dt class="hdlist1"><a href="https://wiki.archlinux.org/index.php/Display_manager"><em>Display manager</em> from <strong>Arch Wiki</strong></a></dt>
+<dd>
+<p>An Arch Linux wiki entry on display managers.
+Features a list of display managers with their own
+wiki page.</p>
+</dd>
+<dt class="hdlist1"><a href="https://wiki.archlinux.org/index.php/Dotfiles"><em>Dotfiles</em> from <strong>Arch Wiki</strong></a></dt>
+<dd>
+<p>It’s a page on Arch Wiki that shortly describes about dotfiles.
+Also features a list of programs that can help you process and
+manage your dotfiles.</p>
+</dd>
+<dt class="hdlist1"><a href="https://github.com/addy-dclxvi/i3-starterpack"><em>i3-starterpack</em> GitHub repo by <strong>addy-dclxvi</strong></a></dt>
+<dd>
+<p>A great start on starting with your i3 setup and can also teach
+a little of bit of ricing.</p>
+</dd>
+<dt class="hdlist1"><a href="http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html"><em>Using GNU Stow to Manage Your Dotfiles</em> by <strong>Brandon Invergo</strong></a></dt>
+<dd>
+<p>It’s a short but sweet article on <a href="https://www.gnu.org/software/stow/">GNU Stow</a>,
+a symbolic link farm manager suitable for controlling configuration files.</p>
+</dd>
+<dt class="hdlist1"><a href="https://wiki.archlinux.org/index.php/window_manager"><em>Window manager</em> from <strong>Arch Wiki</strong></a></dt>
+<dd>
+<p>An Arch Linux wiki entry on window managers.
+Provides a list of window managers with their own
+wiki entry that documents the installation and configuration
+process.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_video"><a class="anchor" href="#_video"></a>Video</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a href="https://www.youtube.com/playlist?list=PL5ze0DjYv5DbCv9vNEzFmP6sU7ZmkGzcf">i3wm series from <strong>Code Cast</strong></a></dt>
+<dd>
+<p>A fantastic video series by Code Cast on getting started with i3 and ricing.
+It’s a bit outdated (heads up for the part where you setup for rofi)
+but most of the concepts still apply today.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+
+    </main>
+
+    <hr>
+    
+    <div class="post__meta--single"><p data-content-publication-date="2019-08-25 18:03:43 &#43;0800 &#43;0800">
+          <span>Published:</span>
+          <span><time datetime="2019-08-25 18:03:43 &#43;0800">2019-08-25 18:03:43 &#43;0800</time></span>
+        </p>
+        <p data-content-modification-date="2020-11-10 01:49:31 &#43;0800 &#43;0800">
+            <span>Updated:</span>
+            <span><time datetime="2020-11-10 01:49:31 &#43;0800">2020-11-10 01:49:31 &#43;0800</time></span>
+        </p>
+          <p data-content-tags="[&#34;\u003ca href=\&#34;/tags#linux\&#34;\u003elinux\u003c/a\u003e&#34;,&#34;\u003ca href=\&#34;/tags#desktop\&#34;\u003edesktop\u003c/a\u003e&#34;,&#34;\u003ca href=\&#34;/tags#ricing\&#34;\u003ericing\u003c/a\u003e&#34;]">
+            <span>Topic:</span>
+            <span><a href="https://foo-dogsquared.github.io/tags#linux">linux</a>.<a href="https://foo-dogsquared.github.io/tags#desktop">desktop</a>.<a href="https://foo-dogsquared.github.io/tags#ricing">ricing</a></span>
+          </p>
+          <p data-content-hash="98124f047930ef4a7e37d1270a09dc31d621d9f9">
+            <span>Hash:</span>
+            <span>98124f047930ef4a7e37d1270a09dc31d621d9f9</span>
+          </p></div>
+</article>
+
+<hr>
+<footer>
+
+<p><a href="#top">Back to top</a></p>
+
+
+
+
+
+
+
+<ul class="list site__socials">
+  
+
+  
+  <li>
+    <a class="site__social-icon" rel="me" href="https://foo-dogsquared.github.io/index.atom" aria-label="RSS">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/rss.svg#rss"></use>
+  </svg>
+    </a>
+  </li><li>
+    <a class="site__social-icon" rel="me" href="https://github.com/foo-dogsquared/" aria-label="GitHub">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/github.svg#github"></use>
+  </svg>
+    </a>
+  </li><li>
+    <a class="site__social-icon" rel="me" href="https://gitlab.com/foo-dogsquared/" aria-label="GitLab">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/gitlab.svg#gitlab"></use>
+  </svg>
+    </a>
+  </li><li>
+    <a class="site__social-icon" rel="me" href="https://mastodon.online/@foodogsquared" aria-label="Mastodon">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/mastodon.svg#mastodon"></use>
+  </svg>
+    </a>
+  </li><li>
+    <a class="site__social-icon" rel="me" href="https://twitter.com/foo_dogsquared" aria-label="Twitter">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/twitter.svg#twitter"></use>
+  </svg>
+    </a>
+  </li></ul>
+
+
+
+
+<p>Unless explicitly stated, all content released here are licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+<p>This site uses <a href="https://prismjs.com/">Prism</a>, <a href="https://www.mathjax.org/">MathJax</a>, and <a href="https://github.com/francoischalifour/medium-zoom">medium-zoom</a>.
+For analytics, it uses <a href="https://goatcounter.com/">GoatCounter</a>.</p>
+
+<small>Generated on 2020-11-12 04:45:12 &#43;0000</small>
+</footer>
+
+<script data-goatcounter="https://foo-dogsquared.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  </body>
+</html>
+

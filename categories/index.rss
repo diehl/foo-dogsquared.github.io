@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Gabriel Arazas</title>
+    <link>https://foo-dogsquared.github.io/categories/</link>
+    <description>Recent content in Categories on Gabriel Arazas</description>
+    <generator>Hugo v0.78.0 -- gohugo.io</generator><language>en-us</language><copyright>Unless explicitly stated, all content released here are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+</copyright>
+        <lastBuildDate>Sun, 11 Oct 2020 12:47:58 +0800</lastBuildDate>
+    <docs>https://www.rssboard.org/rss-2-0-1</docs>
+        <atom:link href="https://foo-dogsquared.github.io/categories/index.rss" rel="self" type="application/rss+xml" />
+        <atom:link href="https://foo-dogsquared.github.io/categories/" rel="canonical" type="text/html" />
+    <item>
+      <title>How to Linux</title>
+      <link>https://foo-dogsquared.github.io/categories/how-to-linux/</link>
+
+      <pubDate>Sun, 11 Oct 2020 12:47:58 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/categories/how-to-linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>How to NixOS</title>
+      <link>https://foo-dogsquared.github.io/categories/how-to-nixos/</link>
+
+      <pubDate>Sun, 11 Oct 2020 12:47:58 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/categories/how-to-nixos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Documentation</title>
+      <link>https://foo-dogsquared.github.io/categories/documentation/</link>
+
+      <pubDate>Sat, 28 Sep 2019 20:29:58 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/categories/documentation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>https://foo-dogsquared.github.io/categories/hugo/</link>
+
+      <pubDate>Tue, 03 Sep 2019 13:07:43 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/categories/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>How not to procastinate</title>
+      <link>https://foo-dogsquared.github.io/categories/how-not-to-procastinate/</link>
+
+      <pubDate>Tue, 30 Apr 2019 12:32:40 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/categories/how-not-to-procastinate/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Freebies</title>
+      <link>https://foo-dogsquared.github.io/categories/freebies/</link>
+
+      <pubDate>Tue, 01 May 2018 09:25:57 +0800</pubDate>
+      <guid>https://foo-dogsquared.github.io/categories/freebies/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

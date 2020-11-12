@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en-us"><title>The complete Linux turnabout | Gabriel Arazas</title>
+
+
+
+
+<link rel="stylesheet" href="https://foo-dogsquared.github.io/css/main.min.6a4c8f4d8980f851a02a79bcc9df947eced01d5013b253ef5e3ffaa89fc98127.css" /><meta name="generator" content="Hugo 0.78.0" />
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="no-referrer" />
+<meta name="description" content="Ever since I found some good stuff at Linux, I wiped out my hard drive completely, exclusively install a Linux-based machine, and left Microsoft Windows behind." /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The complete Linux turnabout"/>
+<meta name="twitter:description" content="Ever since I found some good stuff at Linux, I wiped out my hard drive completely, exclusively install a Linux-based machine, and left Microsoft Windows behind."/>
+<meta property="og:title" content="The complete Linux turnabout" />
+<meta property="og:description" content="Ever since I found some good stuff at Linux, I wiped out my hard drive completely, exclusively install a Linux-based machine, and left Microsoft Windows behind." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://foo-dogsquared.github.io/blog/posts/the-complete-linux-turnabout/" />
+<meta property="article:published_time" content="2019-08-20T20:50:18+08:00" />
+<meta property="article:modified_time" content="2020-11-10T01:49:31+08:00" />
+<link rel="canonical" type="text/html" href="https://foo-dogsquared.github.io/blog/posts/the-complete-linux-turnabout/" />
+    
+    <script>
+    let theme = window.localStorage.getItem('theme'); 
+    if (theme) {
+        document.documentElement.dataset.theme = theme;
+    }
+</script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/keep-markup/prism-keep-markup.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.5/dist/medium-zoom.min.js"></script>
+<script>window.addEventListener('load', () => mediumZoom('article img', { 'background': 'rgba(0, 0, 0, 0.75)' }))</script>
+
+<body><nav aria-label="Primary navigation">
+  <a class="site__title" href="https://foo-dogsquared.github.io/">Gabriel Arazas</a>
+  <div class="list site__links">
+    
+      <a href="https://foo-dogsquared.github.io/about/">About me</a>
+      <a href="https://foo-dogsquared.github.io/archives/">Archives</a>
+      <a href="https://foo-dogsquared.github.io/blog/">Blog</a>
+      
+    
+  </div>
+</nav>
+
+
+<article class="post--single">
+    <header>
+        <h1>The complete Linux turnabout</h1>
+    </header>
+<div class="list post__meta"><time datetime="2019-08-20 20:50:18 &#43;0800 &#43;0800">
+    
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/generic/calendar.svg#calendar"></use>
+  </svg>
+
+    <span style="margin-left: 0.5em;">2019-08-20</span>
+  </time>
+  <time datetime="2020-11-10 01:49:31 &#43;0800 &#43;0800">
+    
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/generic/refresh.svg#refresh"></use>
+  </svg>
+
+    <span style="margin-left: 0.5em;">2020-11-10</span>
+  </time>
+</div>
+    <style>
+    #TableOfContents:not(:empty)::before {
+      content: "Table of contents";
+      font-weight: bold;
+    }
+    </style>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#_my_new_os">My new OS</a></li>
+    <li><a href="#_my_newfound_workflow">My newfound workflow</a></li>
+    <li><a href="#_first_window_manager">First window manager</a>
+      <ul>
+        <li><a href="#_status_bar">Status bar</a></li>
+        <li><a href="#_application_launcher">Application launcher</a></li>
+        <li><a href="#_desktop_background">Desktop background</a></li>
+        <li><a href="#_other_details">Other details</a></li>
+      </ul>
+    </li>
+    <li><a href="#_a_turnaround_for_the_terminal">A turnaround for the terminal</a>
+      <ul>
+        <li><a href="#_alacritty">Alacritty</a></li>
+        <li><a href="#_vim">Vim</a></li>
+        <li><a href="#_ranger">ranger</a></li>
+      </ul>
+    </li>
+    <li><a href="#_low_key_ricing">Low-key ricing</a></li>
+    <li><a href="#_a_new_leaf">A new leaf</a></li>
+    <li><a href="#_conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+
+
+    <main>
+    
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ever since I found some good stuff at Linux, I wiped out my
+hard drive completely, exclusively install a Linux-based
+machine, and left Microsoft Windows behind.</p>
+</div>
+<div class="paragraph">
+<p>Here’s some details and experiences about my complete turnaround
+for my computer workflow:</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_my_new_os"><a class="anchor" href="#_my_new_os"></a>My new OS</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I used to dual-boot my machine with Windows and whatever Linux-based
+distro I was comfortable to use at the time. For the last 8 months or so,
+I’ve been using <a href="https://manjaro.org/">Manjaro</a> only because of the
+<a href="https://wiki.archlinux.org/index.php/Arch_User_Repository">Arch User Repository</a>
+which has a large selection of software while not fully tipping my toe into
+using Arch Linux and the effort of maintaining it is minimal because it
+abstracts it away from you. Not to mention the
+<a href="https://www.archlinux.org/packages/">official package list of Arch Linux</a> is also
+a beast. It was the best of both worlds.</p>
+</div>
+<div class="paragraph">
+<p>At the end, it didn’t work out since I found out 8 months later that Manjaro
+withholds the recently released/upgraded software from Arch Linux before updating
+their own for security reasons. That didn’t go well for me since I thought it’s
+doesn’t really hold the point of using Arch-based distros anymore so I thought to
+dive into the OG of Arch-based distros: <a href="https://www.archlinux.org/">Arch Linux</a> itself.</p>
+</div>
+<div class="paragraph">
+<p>In my first few days, installing Arch Linux is a difficult task especially I have
+no idea how Linux works in the grand picture. I was looking up to the
+<a href="https://wiki.archlinux.org/">Arch Wiki</a> in my phone all day at the time double-checking
+every time I step up one more step in the instructions. I took me about 5 installations
+before I got it correctly and cruise through without much worrying.</p>
+</div>
+<div class="paragraph">
+<p>Booting up a functional Arch Linux that I tried and installed is a challenge well
+done and satisfied with.
+It seriously feels good when I got it working.
+Not to mention that I gain some nuts and bolts knowledge on Linux as well.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_my_newfound_workflow"><a class="anchor" href="#_my_newfound_workflow"></a>My newfound workflow</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Since a fresh installation of Arch Linux is very minimal, I took it as an
+opportunity to have a completely new set of programs to fiddle with.</p>
+</div>
+<div class="paragraph">
+<p>The first thing in consideration is a desktop environment but I saw
+an alternative way of using a &#34;desktop&#34; with
+<a href="https://wiki.archlinux.org/index.php/window_manager">window managers</a>.
+Since my workflow is simple and I don’t need more fancy getup that one usually gets
+from DEs, I decided to try it out for some change.
+And it was cool.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_first_window_manager"><a class="anchor" href="#_first_window_manager"></a>First window manager</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I decided to use <a href="https://i3wm.org/">i3</a> for my first window manager.
+The first time I use it doesn’t bring up a bad experience.
+It was easy to adapt to it since I’m completely used to using programs
+that live in a command line interface like <a href="https://www.vim.org/">Vim</a>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="assets/i3-setup.webp" alt="My i3 setup"/>
+</div>
+<div class="title">Figure 1. My i3 setup</div>
+</div>
+<div class="paragraph">
+<p>i3 also offers a level of <a href="https://i3wm.org/docs/userguide.html">configuration</a>
+that could make you a bit more efficient.
+In my case, I set up a mode that’ll easily let me open my usual programs with
+only two key strokes like the following examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Ctrl + Super</code> and <code>f</code> will open <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a></p>
+</li>
+<li>
+<p><code>Ctrl + Super</code> then <code>t</code> will open <a href="https://www.thunderbird.net/">Thunderbird</a></p>
+</li>
+<li>
+<p><code>Ctrl + Super</code> then <code>a</code> will open my file manager (<a href="https://docs.xfce.org/xfce/thunar/start">Thunar</a>)</p>
+</li>
+<li>
+<p>and so on…​</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>I also set up some keybindings that I usually use in my previous setup like
+a screenshot capture with <a href="https://github.com/naelstrof/maim">maim</a>,
+video capture with <a href="https://obsproject.com/">OBS Studio</a>, and
+quick switching of windows and workspaces back and forth.</p>
+</div>
+<div class="sect2">
+<h3 id="_status_bar"><a class="anchor" href="#_status_bar"></a>Status bar</h3>
+<div class="paragraph">
+<p>Along with the keybindings, I also put a status bar usually seen in
+desktop environments.
+I decided to use the i3bar since it came in by default with i3.
+Then I use i3status (also came by default with i3) to fill up some
+usually needed information like audio volume loudness, remaining disk
+space for root and for home, and RAM and CPU usage.</p>
+</div>
+<div class="paragraph">
+<p>It took a while to configure it but I seriously liking the pace around it so far.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="assets/i3bar-appearance.webp" alt="The resulting i3bar setup"/>
+</div>
+<div class="title">Figure 2. The resulting i3bar setup</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_application_launcher"><a class="anchor" href="#_application_launcher"></a>Application launcher</h3>
+<div class="paragraph">
+<p>My personal desktop experience wouldn’t be complete without an application launcher.
+So I considered <a href="https://github.com/DaveDavenport/rofi"><code>rofi</code></a> to be my best friend on
+the matter.</p>
+</div>
+<div class="paragraph">
+<p>By default, i3 uses <a href="http://tools.suckless.org/dmenu"><code>dmenu</code></a> as the application launcher
+but I replaced it with rofi since I find it more intuitive and easier to configure.</p>
+</div>
+<div class="paragraph">
+<p>I also made rofi to look like a start menu you usually find in desktop environments like
+<a href="http://www.xfce.org/">Xfce</a> or <a href="https://wiki.archlinux.org/index.php/KDE">KDE</a>.
+It’s not too shabby if I say so myself.
+It’s quite usable with rofi’s sidebar mode where you can find windows, desktop entries,
+binaries, and even SSH configs.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="assets/rofi-setup.webp" alt="Customized rofi menu"/>
+</div>
+<div class="title">Figure 3. Customized rofi menu</div>
+</div>
+<div class="paragraph">
+<p>You can find
+<a href="https://github.com/foo-dogsquared/dotfiles/tree/master/rofi">my rofi config on my GitHub repo</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_desktop_background"><a class="anchor" href="#_desktop_background"></a>Desktop background</h3>
+<div class="paragraph">
+<p>It wouldn’t have the complete desktop experience without a desktop background.
+Fortunately, it’s easier done than said.</p>
+</div>
+<div class="paragraph">
+<p>For the desktop background, I use <a href="http://feh.finalrewind.org/">feh</a> to easily set it
+up with the following line in my i3 config file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">exec_always feh --bg-scale ~/wallpapers/sand.jpg</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you’re curious about the wallpaper, you can view it
+<a href="https://www.reddit.com/r/wallpapers/comments/co9t14/sand/">in this page</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_other_details"><a class="anchor" href="#_other_details"></a>Other details</h3>
+<div class="paragraph">
+<p>There are still many details left on how my i3 configuration turned out to
+be so <a href="https://github.com/foo-dogsquared/dotfiles/blob/master/i3/config">here’s my i3 config file</a>
+if you want to see more of it.</p>
+</div>
+<div class="paragraph">
+<p>If you want to get started on i3, I recommend to look into the
+<a href="https://i3wm.org/docs/userguide.html">user guide</a> often.
+It has a fantastic introduction and documentation to begin with.
+I don’t think I need to make a post detailing on it, it’s too nice and beautiful.</p>
+</div>
+<div class="paragraph">
+<p>I also recommend looking into the
+<a href="https://github.com/addy-dclxvi/i3-starterpack"><code>i3-starterpack</code> GitHub repo by <strong>addy-dclxvi</strong></a>.
+It has a great introduction to get started with your i3 setup.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_turnaround_for_the_terminal"><a class="anchor" href="#_a_turnaround_for_the_terminal"></a>A turnaround for the terminal</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>With a new workflow, comes a new terminal setup.
+I used to just leave my terminal setup by default since I don’t want to
+break things by then.
+But because of the minimal setup Arch Linux provides at the very start,
+it’s a safe bet to be experimental.</p>
+</div>
+<div class="sect2">
+<h3 id="_alacritty"><a class="anchor" href="#_alacritty"></a>Alacritty</h3>
+<div class="paragraph">
+<p>This time, I tried to stick with a new terminal emulator (or terminal, for short
+which I’ll refer to it by this point).
+Initially, I chose <a href="https://sw.kovidgoyal.net/kitty/">Kitty</a> because
+it’s a GPU-based terminal.
+Eventually, I switched to <a href="https://github.com/jwilm/alacritty/">Alacritty</a>
+because it’s faster on my machine and it supports
+<a href="https://github.com/be5invis/iosevka">Iosevka</a>, a beautiful font set I recently discovered.</p>
+</div>
+<div class="paragraph">
+<p>The configuration for my terminal is only through fonts and color scheme.
+So there’s really nothing to discuss here.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vim"><a class="anchor" href="#_vim"></a>Vim</h3>
+<div class="paragraph">
+<p><a href="https://www.vim.org/">Vim</a> has a reputation for being a meme in the text editors field.
+It has unintuitive user experience especially against modern text editors like
+<a href="https://code.visualstudio.com/">Visual Studio Code</a> or <a href="https://atom.io/">Atom</a>
+without some manual reading beforehand.
+It also has unconventional controls due to the modal philosophy it adheres to.
+However, take time to master it and you’ll be speeding through for most of the
+time.</p>
+</div>
+<div class="paragraph">
+<p>I use Vim mostly for writing documents that relies on text formatting languages
+like <a href="https://daringfireball.net/projects/markdown">Markdown</a> and
+<a href="https://asciidoctor.org/">Asciidoctor</a>.
+My main case, however, is for writing LaTeX.</p>
+</div>
+<div class="paragraph">
+<p>After I saw <a href="https://castel.dev/post/lecture-notes-1/">this post by <strong>Gilles Castel</strong></a>,
+I inspired to learn more about Vim since I was also learning LaTeX at the time.
+A few weeks later and I was comfortable with my own workflow.</p>
+</div>
+<div class="paragraph">
+<p>Here’s a few details about it:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>I use <a href="https://github.com/junegunn/vim-plug"><code>vim-plug</code></a> as the plugin
+manager.</p>
+</li>
+<li>
+<p>For writing LaTeX, I use <a href="https://github.com/lervag/vimtex/"><code>vimtex</code></a>.</p>
+</li>
+<li>
+<p>I use <a href="https://pwmt.org/projects/zathura"><code>zathura</code></a> as the live LaTeX viewer.</p>
+</li>
+<li>
+<p>I choose <a href="https://github.com/sirver/UltiSnips"><code>UltiSnips</code></a> as my snippets manager.</p>
+</li>
+<li>
+<p>I use <a href="https://github.com/907th/vim-auto-save"><code>vim-auto-save</code></a> for autosaving
+my files.</p>
+</li>
+<li>
+<p>I use <a href="https://github.com/scrooloose/nerdtree"><code>nerdtree</code></a> for a built-in
+file browser.</p>
+</li>
+<li>
+<p>I have <a href="https://github.com/vim-airline/vim-airline"><code>vim-airline</code></a> as the
+status bar. It’s pretty cool looking.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="assets/vim-setup.webp" alt="Fullscreen Vim setup"/>
+</div>
+<div class="title">Figure 4. Fullscreen Vim setup</div>
+</div>
+<div class="paragraph">
+<p>If you want to take a deeper look or just want to see the full config,
+<a href="https://github.com/foo-dogsquared/dotfiles/tree/master/vim">you can see it in my dotfiles repo</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ranger"><a class="anchor" href="#_ranger"></a>ranger</h3>
+<div class="paragraph">
+<p>I discovered another cool program that lives in the terminal:
+<a href="http://ranger.github.io/">ranger</a>.</p>
+</div>
+<div class="paragraph">
+<p>It’s a complete file browser with Vim-inspired controls.
+It also comes with its own file opener for figuring out which applications
+to open for a certain file type.
+Both of the file browser and file opener are configurable which
+you can edit it with a simple text editor.</p>
+</div>
+<div class="paragraph">
+<p>If you know how to use Vim, you mostly know how to use ranger.
+The way how you go around a file in Vim is quite similar to how you
+explore around a filesystem with Ranger.</p>
+</div>
+<div class="paragraph">
+<p>Here’s some examples of the similarities:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;"/>
+<col style="width: 33.3333%;"/>
+<col style="width: 33.3334%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Keybinding</th>
+<th class="tableblock halign-left valign-top">Vim action</th>
+<th class="tableblock halign-left valign-top">ranger action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>gg</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">go to the beginning of the file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">go to the beginning of the file list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>G</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">go to the last line</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">go to the last file in the list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dd</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cut the current line</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cut the current file selection</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>yy</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yank (copy) the current line</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yank (copy) the current file</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>v</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selecting text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selecting files</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>i</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">insert text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rename and insert text of the selected file</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Like Vim, if you master the controls, you would be faster exploring
+the filesystem.</p>
+</div>
+<div class="paragraph">
+<p>Here’s a quick demo of how you explore between different partitions
+from home to my blog in another partition back to my dotfiles in
+the home directory.</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="assets/ranger-demo.mp4" width="100%" controls="">
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_low_key_ricing"><a class="anchor" href="#_low_key_ricing"></a>Low-key ricing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ever since I got my i3 setup to be practically functional, I’ve dug a rabbithole
+of configuring the little details for most of the time.
+I’ve been considering things such as a compositor, application launcher,
+screenshot tool, keybinding tool, and a replacement for my status bar
+(which I didn’t by the end of the day).</p>
+</div>
+<div class="paragraph">
+<p>That’s when I discovered <a href="https://www.reddit.com/r/unixporn/"><code>/r/unixporn</code></a>,
+a subreddit for showing off your *Nix (i.e., Linux, MacOS) configurations and setup.
+It’s also a community for &#34;ricing&#34;, an act of adding the visual spices to your setup.
+I recommend to check it out if you’re looking for a starting point.
+They’re pretty friendly for first timers, too.</p>
+</div>
+<div class="paragraph">
+<p>It’s a satisfying experience seeing my setup to be prettier (and more functional)
+with each revision.
+More programs come and go to my experimental workflow and eventually settle with a
+(hopefully) functional setup.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_new_leaf"><a class="anchor" href="#_a_new_leaf"></a>A new leaf</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I said that the reason I’ve gone full Linux is due to me finding some
+good alternatives to the programs I usually use (except
+<a href="https://visualstudio.com/">Visual Studio</a>).</p>
+</div>
+<div class="paragraph">
+<p>With this in mind, let me quickly list a bunch of programs that truly
+stand out for me:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.freecadweb.org/">FreeCAD</a></p>
+</li>
+<li>
+<p><a href="https://blender.org/">Blender</a></p>
+</li>
+<li>
+<p><a href="https://musescore.org/">MuseScore</a></p>
+</li>
+<li>
+<p><a href="https://inkscape.org/">Inkscape</a></p>
+</li>
+<li>
+<p><a href="https://krita.org/en/">Krita</a></p>
+</li>
+<li>
+<p><a href="https://www.videolan.org/vlc/">VLC Media Player</a></p>
+</li>
+<li>
+<p><a href="https://www.thunderbird.net/">Thunderbird</a></p>
+</li>
+<li>
+<p><a href="https://www.latex-project.org/">LaTeX</a> (with
+<a href="https://www.tug.org/texlive/">TeX Live</a> as the LaTeX distro)</p>
+</li>
+<li>
+<p><a href="https://code.visualstudio.com/">Visual Studio Code</a></p>
+</li>
+<li>
+<p><a href="https://obsproject.com/">OBS Studio</a></p>
+</li>
+<li>
+<p>…​and so much more!</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can the full list on my <a href="https://github.com/foo-dogsquared/dotfiles">dotfiles</a>
+README.
+I think you get the point.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion"><a class="anchor" href="#_conclusion"></a>Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Having a full-on Linux system is pretty awesome especially these days where
+there are feature-complete software that is being developed given away for free
+and have its code open to the public.</p>
+</div>
+<div class="paragraph">
+<p>I made my migration since I found so much good stuff at Linux and it
+doesn’t worth the effort to make my machine dual-boot it with Windows just
+to use one program.</p>
+</div>
+</div>
+</div>
+
+    </main>
+
+    <hr>
+    
+    <div class="post__meta--single"><p data-content-publication-date="2019-08-20 20:50:18 &#43;0800 &#43;0800">
+          <span>Published:</span>
+          <span><time datetime="2019-08-20 20:50:18 &#43;0800">2019-08-20 20:50:18 &#43;0800</time></span>
+        </p>
+        <p data-content-modification-date="2020-11-10 01:49:31 &#43;0800 &#43;0800">
+            <span>Updated:</span>
+            <span><time datetime="2020-11-10 01:49:31 &#43;0800">2020-11-10 01:49:31 &#43;0800</time></span>
+        </p>
+          <p data-content-tags="[&#34;\u003ca href=\&#34;/tags#linux\&#34;\u003elinux\u003c/a\u003e&#34;,&#34;\u003ca href=\&#34;/tags#desktop\&#34;\u003edesktop\u003c/a\u003e&#34;,&#34;\u003ca href=\&#34;/tags#ricing\&#34;\u003ericing\u003c/a\u003e&#34;]">
+            <span>Topic:</span>
+            <span><a href="https://foo-dogsquared.github.io/tags#linux">linux</a>.<a href="https://foo-dogsquared.github.io/tags#desktop">desktop</a>.<a href="https://foo-dogsquared.github.io/tags#ricing">ricing</a></span>
+          </p>
+          <p data-content-hash="98124f047930ef4a7e37d1270a09dc31d621d9f9">
+            <span>Hash:</span>
+            <span>98124f047930ef4a7e37d1270a09dc31d621d9f9</span>
+          </p></div>
+</article>
+
+<hr>
+<footer>
+
+<p><a href="#top">Back to top</a></p>
+
+
+
+
+
+
+
+<ul class="list site__socials">
+  
+
+  
+  <li>
+    <a class="site__social-icon" rel="me" href="https://foo-dogsquared.github.io/index.atom" aria-label="RSS">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/rss.svg#rss"></use>
+  </svg>
+    </a>
+  </li><li>
+    <a class="site__social-icon" rel="me" href="https://github.com/foo-dogsquared/" aria-label="GitHub">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/github.svg#github"></use>
+  </svg>
+    </a>
+  </li><li>
+    <a class="site__social-icon" rel="me" href="https://gitlab.com/foo-dogsquared/" aria-label="GitLab">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/gitlab.svg#gitlab"></use>
+  </svg>
+    </a>
+  </li><li>
+    <a class="site__social-icon" rel="me" href="https://mastodon.online/@foodogsquared" aria-label="Mastodon">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/mastodon.svg#mastodon"></use>
+  </svg>
+    </a>
+  </li><li>
+    <a class="site__social-icon" rel="me" href="https://twitter.com/foo_dogsquared" aria-label="Twitter">
+  <svg>
+    <use href="https://foo-dogsquared.github.io/icons/brand/twitter.svg#twitter"></use>
+  </svg>
+    </a>
+  </li></ul>
+
+
+
+
+<p>Unless explicitly stated, all content released here are licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+<p>This site uses <a href="https://prismjs.com/">Prism</a>, <a href="https://www.mathjax.org/">MathJax</a>, and <a href="https://github.com/francoischalifour/medium-zoom">medium-zoom</a>.
+For analytics, it uses <a href="https://goatcounter.com/">GoatCounter</a>.</p>
+
+<small>Generated on 2020-11-12 04:45:13 &#43;0000</small>
+</footer>
+
+<script data-goatcounter="https://foo-dogsquared.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  </body>
+</html>
+
